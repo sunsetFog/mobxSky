@@ -6,10 +6,12 @@ import React from 'react';
 import SuspenseLazy from '@/components/SuspenseLazy';
 import {Navigate, RouteObject} from 'react-router-dom';
 
-const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/view/Home'));
-const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/view/Home/HomeOne'));
-const About = SuspenseLazy(() => import(/* webpackChunkName:"about" */ /* webpackPrefetch: true */ '@/view/About'));
-const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/view/NotFound'));
+const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/routerView/Home'));
+const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/routerView/Home/HomeOne'));
+const About = SuspenseLazy(
+    () => import(/* webpackChunkName:"about" */ /* webpackPrefetch: true */ '@/routerView/About')
+);
+const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/routerView/404'));
 
 /* webpackPrefetch: true */
 /* webpackPreload : true */

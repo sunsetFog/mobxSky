@@ -20,5 +20,6 @@ const plugins =
           }
         : {};
 module.exports = {
-    plugins
+    // 去掉px 转 vw
+    // plugins
 };

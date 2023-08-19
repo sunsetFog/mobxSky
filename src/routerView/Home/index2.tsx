@@ -33,7 +33,8 @@ function Home() {
             <div
                 className={styles['home-tab']}
                 onClick={() => {
-                    handleClickLink('about');
+                    // handleClickLink('about');
+                    handleClickLink('one');
                 }}
             >
                 "Hello Home"
