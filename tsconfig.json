@@ -1,6 +1,11 @@
 /*
 typescript检查
 tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tsconfig.html
+
+关闭此错误的类型检查:
+方式1: 忽略，使用 // @ts-ignore 忽略此行类型检查。
+方式2: 断言，as any 临时关闭类型检查。
+方式3: 定义类型
 */
 {
     "compilerOptions": {
@@ -19,6 +24,7 @@ tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tscon
 
         /* 严格的类型检查选项 */
         "strict": false, // 启用所有严格类型检查选项
+        "noImplicitAny": false, // 关闭对隐式 any 类型的检查
 
         /* 模块解析选项 */
         "baseUrl": "./", // 用于解析非相对模块名称的基目录

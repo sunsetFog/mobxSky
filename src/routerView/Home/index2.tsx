@@ -34,7 +34,7 @@ function Home() {
                 className={styles['home-tab']}
                 onClick={() => {
                     // handleClickLink('about');
-                    handleClickLink('one');
+                    handleClickLink('/home/reactClass/attrBind');
                 }}
             >
                 "Hello Home"

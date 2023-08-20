@@ -6,6 +6,7 @@ import {AppstoreOutlined} from '@ant-design/icons';
 
 import routesArr from '@/router/index';
 import history from '@/utils/history';
+import withNavigation from '@/HigherOrder/withNavigation';
 
 class menuDesign extends Component {
     state = {
@@ -39,7 +40,9 @@ class menuDesign extends Component {
     }
     menuWay(value) {
         console.log('--menuWay--', value, '---', this);
-        history.push(value.key);
+        // history.push(value.key);
+        // @ts-ignore
+        this.props.navigate(value.key);
     }
     render() {
         const {
@@ -59,4 +62,4 @@ class menuDesign extends Component {
     }
 }
 
-export default menuDesign;
+export default withNavigation(menuDesign);
