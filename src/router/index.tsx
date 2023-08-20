@@ -16,7 +16,16 @@ const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@
 
 /* webpackPrefetch: true */
 /* webpackPreload : true */
-const AttrBind = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/routerView/home/reactClass/attrBind'));
+const LifeCycle = SuspenseLazy(
+    () =>
+        import(
+            /* webpackChunkName:"life-cycle" */ /* webpackPrefetch: false */ '@/routerView/home/reactClass/lifeCycle'
+        )
+);
+const AttrBind = SuspenseLazy(
+    () =>
+        import(/* webpackChunkName:"attr-bind" */ /* webpackPrefetch: false */ '@/routerView/home/reactClass/attrBind')
+);
 
 // const routes: RouteObject[] = [
 const routes = [
@@ -28,6 +37,12 @@ const routes = [
         path: 'home',
         element: Home,
         children: [
+            {
+                path: '/home/reactClass/lifeCycle',
+                element: LifeCycle,
+                name: '生命周期',
+                menuType: 'type1'
+            },
             {
                 path: '/home/reactClass/attrBind',
                 element: AttrBind,

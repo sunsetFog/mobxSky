@@ -4,8 +4,6 @@ import React, {Component, useState} from 'react';
 // import {connect} from 'react-redux';
 // import * as niceActions from '~/redux/reduces/nice.js';
 
-import {HashRouter as Router, Route, Switch, Redirect, Link, withRouter} from 'react-router-dom';
-
 // 引入图片
 import logoimg from '@/assets/logo.png';
 
@@ -50,4 +48,4 @@ class attrBind extends Component {
     }
 }
 
-export default withRouter(attrBind);
+export default attrBind;

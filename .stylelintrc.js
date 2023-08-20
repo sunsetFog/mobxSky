@@ -1,3 +1,7 @@
+/*
+css的检查
+提高 CSS 代码质量
+*/
 module.exports = {
     extends: [
         'stylelint-config-standard', // stylelint配置标准, 如需修改请在rules添加配置

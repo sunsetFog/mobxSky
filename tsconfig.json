@@ -1,4 +1,7 @@
-// tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tsconfig.html
+/*
+typescript检查
+tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tsconfig.html
+*/
 {
     "compilerOptions": {
         /* 基本选项 */
