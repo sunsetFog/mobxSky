@@ -5,9 +5,10 @@
 import React from 'react';
 import SuspenseLazy from '@/components/SuspenseLazy';
 import {Navigate, RouteObject} from 'react-router-dom';
+import {extend} from 'dayjs';
 
-const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/routerView/Home'));
-const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/routerView/Home/HomeOne'));
+const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/routerView/home'));
+// const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/routerView/home/HomeOne'));
 const About = SuspenseLazy(
     () => import(/* webpackChunkName:"about" */ /* webpackPrefetch: true */ '@/routerView/About')
 );
@@ -15,8 +16,10 @@ const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@
 
 /* webpackPrefetch: true */
 /* webpackPreload : true */
+const AttrBind = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/routerView/home/reactClass/attrBind'));
 
-const routes: RouteObject[] = [
+// const routes: RouteObject[] = [
+const routes = [
     {
         path: '/',
         element: <Navigate to='home' /> // 重定向
@@ -25,10 +28,11 @@ const routes: RouteObject[] = [
         path: 'home',
         element: Home,
         children: [
-            // 嵌套路由
             {
-                path: 'one',
-                element: HomeOne
+                path: '/home/reactClass/attrBind',
+                element: AttrBind,
+                name: '属性绑定',
+                menuType: 'type1'
             }
         ]
     },

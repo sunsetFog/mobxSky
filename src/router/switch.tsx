@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '@/routerView/Home/index';
+import Home from '@/routerView/home/index';
 import NotFound from '@/routerView/404/index';
 /*
 react-router-dom升级 v6
@@ -8,6 +8,7 @@ Navigate 替换 Redirect
 element={<App />} 替换 component={App}
 不再支持`exact`、`strict`等属性,匹配规则简化了
 不设置props的children, 用Outlet了
+withRouter删了
 */
 import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
 // import {Provider} from 'react-redux';
@@ -20,7 +21,7 @@ const switchRouter = (props) => {
             {/*
               这相当于vue的app.vue    方式2
            */}
-            <Route path='/way2' element={<Home />}></Route>
+            <Route path='/home' element={<Home />}></Route>
             {/*
                 注意用的是Route，Router嵌套时用
                 exact是精确匹配
