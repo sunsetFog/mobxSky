@@ -1,9 +1,11 @@
 // React应该是底层在调用，得引入
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, {useState, useEffect, useRef, useContext, createContext} from 'react';
+const DefineContext = createContext();
 // import { useHistory } from 'react-router'
+import {compose} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter, useHistory } from 'react-router-dom';
+// import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter, useHistory } from 'react-router-dom';
 
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
@@ -30,44 +32,48 @@ function Cosplay(props) {
             1. 组件卸载时自动执行
             2. 组件更新时，下一个useEffect副作用函数执行*之前*自动执行
     */
-    useEffect(()=>{
+    useEffect(() => {
         // 发送网络请求
-        async function fetchData(){
-            const res = await customAxios.get('http://geek.itheima.net/v1_0/channels')
+        async function fetchData() {
+            // const res = await customAxios.get('http://geek.itheima.net/v1_0/channels');
         }
-        fetchData()
+        fetchData();
 
         console.log(`副作用: ${count}`, h1Foo);
         return () => {
-            console.log("清理副作用, 比如：清理定时器");
+            console.log('清理副作用, 比如：清理定时器');
             // clearInterval(timerId)
-        }
-    },[count]);
+        };
+    }, [count]);
     const beanWay = () => {
-        console.log("--beanWay--");
+        console.log('--beanWay--');
         setCount(9);
-    }
+    };
     // const history = useHistory();
-    const { history } = props;
+    const {history} = props;
     const jumpWay = () => {
-        history.push('/home/hooks/instruct?title=6')
+        history.push('/home/hooks/instruct?title=6');
         // history.push({
         //     pathname: '/home/exRedux',
         //     state: { name: '白菜' },
         // })
-    }
+    };
 
     const [list, setList] = useState([]);
-    console.log("--props--", props);
-    console.log("--useState--", count, "---", list);
+    console.log('--props--', props);
+    console.log('--useState--', count, '---', list);
 
-    console.log("--useContext使用Context数据--", useContext(DefineContext));
+    console.log('--useContext使用Context数据--', useContext(DefineContext));
     return (
         <div>
             ++++++++++++++++++++++++函数组件++++++++++++++++++++++++
-            <br/><br/>
-            <button onClick={beanWay} ref={h1Foo}>修改state</button>
-            <br/><br/>
+            <br />
+            <br />
+            <button onClick={beanWay} ref={h1Foo}>
+                修改state
+            </button>
+            <br />
+            <br />
             <button onClick={jumpWay}>useHistory跳转</button>
         </div>
     );
@@ -83,10 +89,11 @@ Cosplay.propTypes = {
 };
 
 function mapStateToProps(params) {
-    console.log("-mapStateToProps-", params);
+    console.log('-mapStateToProps-', params);
     return {
         state: params.example
-    }
+    };
 }
 // props对象加入了state,dispatch,history属性   history用于跳转
-export default connect(mapStateToProps)(withRouter(Cosplay));
+// export default compose(connect(mapStateToProps))(Cosplay);
+export default Cosplay;

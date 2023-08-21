@@ -17,6 +17,12 @@ class menuDesign extends Component {
                 key: 'type1',
                 icon: <AppstoreOutlined />,
                 children: []
+            },
+            {
+                label: '函数组件',
+                key: 'type2',
+                icon: <AppstoreOutlined />,
+                children: []
             }
         ]
     };
