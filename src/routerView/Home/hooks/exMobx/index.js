@@ -1,45 +1,35 @@
 import React, {useState, useEffect, useRef, useContext} from 'react';
 
-// 1、导入countStore
-import {counterStore} from '@/mobxStore/noModularity/counter';
-// 2、导入中间件链接mobx react 完成响应式变化
+// 导入中间件链接mobx react 完成响应式变化
 import {observer} from 'mobx-react-lite';
-
+// 非模块化封装
+import {counterStore1} from '@/mobxStore/noModularity/counter';
+// 模块化封装
 import {useStore} from '@/mobxStore/index';
+import LineTextLine from '@/components/lineTextLine/index';
 
-function exMobx1() {
-    const {counterStore02} = useStore(); // 解构赋值
-    console.log('--counterStore02--', counterStore02);
+function exMobx1(props) {
+    console.log('--props对象--', props);
+    const {counterStore2} = useStore(); // 解构赋值
+    console.log('--counterStore2--', counterStore2);
 
     return (
         <div>
-            ----------- 非模块化封装 -----------
+            <LineTextLine>非模块化封装</LineTextLine>
+            <LineTextLine leftCakes={true}>使用store数据</LineTextLine>
+            {counterStore1.count}
+            <LineTextLine leftCakes={true}>调用action方法</LineTextLine>
+            <button onClick={counterStore1.setCount}>调用action方法</button>
+            <LineTextLine leftCakes={true}>计算属性</LineTextLine>
+            数组转字符串：{counterStore1.filterList.join('-')}
             <br />
             <br />
-            使用store数据：{counterStore.count}
-            <br />
-            <br />
-            <button onClick={counterStore.addCount}>调用action方法，修改count值</button>
-            <br />
-            <br />
-            ----------- 计算属性 -----------
-            <br />
-            <br />
-            数组转字符串：{counterStore.filterList.join('-')}
-            <br />
-            <br />
-            <button onClick={counterStore.addList}>调用action方法，修改数组</button>
-            <br />
-            <br />
-            <br />
-            <br />
-            ----------- 模块化封装 -----------
-            <br />
-            <br />
-            使用store数据：{counterStore02.count}
-            <br />
-            <br />
-            <button onClick={counterStore02.addCount}>调用action方法，修改count值</button>
+            <button onClick={counterStore1.setList}>调用action方法，修改数组</button>
+            <LineTextLine>模块化封装</LineTextLine>
+            <LineTextLine leftCakes={true}>使用store数据</LineTextLine>
+            {counterStore2.count}
+            <LineTextLine leftCakes={true}>调用action方法</LineTextLine>
+            <button onClick={counterStore2.setCount}>调用action方法</button>
         </div>
     );
 }

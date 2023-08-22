@@ -12,7 +12,7 @@ tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tscon
         /* 基本选项 */
         "module": "esnext", // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
         "target": "esnext", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'（"ESNext"表示最新的ES语法，包括还处在stage X阶段）
-        "noEmit": true, // 不输出, 不编译代码，只执行类型检查, 不生成输出文件
+        "noEmit": false, // 不输出, 不编译代码，只执行类型检查, 不生成输出文件
         "allowJs": true, // 允许编译 JavaScript 文件
         "jsx": "react", // 指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
         "isolatedModules": true, // 将每个文件做为单独的模块 （与 'ts.transpileModule' 类似）
@@ -24,7 +24,9 @@ tsconfig.json 配置参考: https://lq782655835.github.io/blogs/project/ts-tscon
 
         /* 严格的类型检查选项 */
         "strict": false, // 启用所有严格类型检查选项
+        // 我加上的
         "noImplicitAny": false, // 关闭对隐式 any 类型的检查
+        "outDir": "dist", // 指定编译输出目录
 
         /* 模块解析选项 */
         "baseUrl": "./", // 用于解析非相对模块名称的基目录

@@ -12,6 +12,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Grandson from './grandson';
+import LineTextLine from '@/components/lineTextLine/index';
 
 // @connect(
 //     state => ({nice: state.nice}),
@@ -61,12 +62,11 @@ class Son extends Component {
         } = this;
         return (
             <div>
-                ++++++++++++++++++++++++子组件++++++++++++++++++++++++
-                <br />
                 父组件数据：{peach}
                 <br />
                 <button onClick={this.cakes.bind(this)}>子传父</button>
                 <br></br>
+                <LineTextLine>孙子组件</LineTextLine>
                 <Grandson></Grandson>
             </div>
         );

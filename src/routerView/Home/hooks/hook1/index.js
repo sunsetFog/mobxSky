@@ -5,8 +5,8 @@ const DefineContext = createContext();
 import {compose} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-// import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter, useHistory } from 'react-router-dom';
-
+import {useHistory, useNavigate} from 'react-router-dom';
+import LineTextLine from '@/components/lineTextLine/index';
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
 */
@@ -46,13 +46,14 @@ function Cosplay(props) {
         };
     }, [count]);
     const beanWay = () => {
-        console.log('--beanWay--');
         setCount(9);
     };
     // const history = useHistory();
-    const {history} = props;
+    const navigate = useNavigate();
+    // const {history} = props;
     const jumpWay = () => {
-        history.push('/home/hooks/instruct?title=6');
+        navigate('/home/hooks/instruct?title=6');
+        // history.push('/home/hooks/instruct?title=6');
         // history.push({
         //     pathname: '/home/exRedux',
         //     state: { name: '白菜' },
@@ -66,14 +67,11 @@ function Cosplay(props) {
     console.log('--useContext使用Context数据--', useContext(DefineContext));
     return (
         <div>
-            ++++++++++++++++++++++++函数组件++++++++++++++++++++++++
-            <br />
-            <br />
+            <LineTextLine>修改state数据</LineTextLine>
             <button onClick={beanWay} ref={h1Foo}>
                 修改state
             </button>
-            <br />
-            <br />
+            <LineTextLine>跳转</LineTextLine>
             <button onClick={jumpWay}>useHistory跳转</button>
         </div>
     );

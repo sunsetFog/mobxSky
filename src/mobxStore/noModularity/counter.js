@@ -3,7 +3,7 @@
     编写没有模块化案例
 */
 
-import { makeAutoObservable } from "mobx";
+import {makeAutoObservable} from 'mobx';
 // 类
 class CounterStore {
     // 1、定义数据
@@ -23,17 +23,17 @@ class CounterStore {
         return this.list.filter((item) => item > 2);
     }
     // 方法修改list
-    addList = () => {
+    setList = () => {
         this.list.push(7, 8, 9);
     };
 
     // 3、定义action函数（修改数据）
-    addCount = () => {
+    setCount = () => {
         this.count++;
     };
 }
 
 // 实例化类
-const counterStore = new CounterStore();
+const counterStore1 = new CounterStore();
 // 导出
-export { counterStore };
+export {counterStore1};

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import * as ReactDOM from 'react-dom';
+import LineTextLine from '@/components/lineTextLine/index';
 // 状态管理
 // import {bindActionCreators} from 'redux';
 // import {connect} from 'react-redux';
@@ -19,7 +20,7 @@ UNSAFE_componentWillUpdate
 如果要使用这些方法，请在方法前面加上UNSAFE_
 */
 
-class LifeOfCycle extends Component {
+class LifeOfCycle extends Component<any, any> {
     /*
         数据
         组件被称之为状态机 通过更新state来更新组件的视图展示
@@ -37,7 +38,6 @@ class LifeOfCycle extends Component {
     constructor(props) {
         super(props);
         console.log('--constructor--初始化渲染顺序1');
-        this.state.fruit = '水果';
     }
     /*
         将要插入虚拟dom
@@ -94,46 +94,42 @@ class LifeOfCycle extends Component {
 
     /*
         普通方法
-        this是undefined
      */
     waterWay(event) {
-        console.log('改变this指向当前的组件实例对象---方式1看事件绑定', this);
-        event.preventDefault(); // 阻止默认行为
-        console.log('--waterWay--', event);
         this.setState({
             painting: '画啥'
         });
-        console.log('地道道=this.state', this.state);
+        console.log('此时state未更新', this.state);
     }
-    fabulous(event, num) {
-        console.log('改变this指向当前的组件实例对象---方式2看事件绑定', this);
-        console.log('获取事件对象=', event);
-        console.log('事件绑定并传递额外参数=', num);
-    }
+
+    // 普通方法
     unloadWay() {
-        ReactDOM.unmountComponentAtNode(document.getElementById('app'));
+        // React 18不支持
+        ReactDOM.unmountComponentAtNode(document.getElementById('root'));
     }
     /*
         用于插入虚拟DOM
      */
     render() {
         console.log('--render--初始化渲染顺序3--每次更新state顺序2');
-        // console.log("积极健康=this.props", this.props);
-        // console.log("叽叽叽叽=this.state", this.state);
-        // console.log("就算是可=this", this);
+        // TypeScript形状才能正确解构  未知???
+        // const {
+        //     state: {painting},
+        //     props: {}
+        // } = this;
+        const {painting} = this.state;
+        console.log('--painting--', painting);
         return (
             <div>
-                ++++生命周期++++
                 {/*
                 空标签<></>  相当于vue的template标签
                 现在是<React.Fragment> 若上面import React, { Component, Fragment } from 'react';  就用 <Fragment>
             */}
+                <LineTextLine>空标签</LineTextLine>
                 <React.Fragment>空标签</React.Fragment>
-                <br />
-                <button onClick={(event) => this.fabulous(event, 999)}>事件绑定并改变this指向</button>
-                <br />
-                <button onClick={this.waterWay.bind(this)}>更新state</button>
-                <br></br>
+                <LineTextLine>更新state</LineTextLine>
+                <button onClick={this.waterWay.bind(this)}>{painting}</button>
+                <LineTextLine>手动卸载组件</LineTextLine>
                 <button onClick={this.unloadWay.bind(this)}>卸载组件</button>
             </div>
         );

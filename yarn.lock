@@ -8734,6 +8734,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-order@^1.0.4:
+  version "1.0.4"
+  resolved "https://npmjs.sstjx123.com/redux-order/-/redux-order-1.0.4.tgz#7dd4faf05ee1c34aaabd9e763d620b1beb3bbd88"
+  integrity sha512-QbQL/jrijJg6M1CW5eM+XKxgSxYt+Tcfw1Iu9+9otQ+eUMfF64840LBMdvptMS/0O9HH+ewui5dPh/mbzmYHDg==
+
 redux-thunk@^2.4.2:
   version "2.4.2"
   resolved "https://npmjs.sstjx123.com/redux-thunk/-/redux-thunk-2.4.2.tgz#b9d05d11994b99f7a91ea223e8b04cf0afa5ef3b"

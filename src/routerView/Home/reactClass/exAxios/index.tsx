@@ -11,6 +11,8 @@ import React, {Component} from 'react';
 //     dispatch => bindActionCreators(niceActions, dispatch)
 // )
 
+import {getDialogConfig, getInviteInfoReq} from './services';
+
 class ExAxios extends Component {
     state = {};
 
@@ -28,9 +30,34 @@ class ExAxios extends Component {
         //         console.log('catch=', error);
         //     });
     }
+    getDialogConfig = () => {
+        getDialogConfig()
+            .then((result) => {
+                console.log('成功回调！', result);
+            })
+            .catch((error) => {
+                console.log('失败回调！', error);
+            });
+    };
+    getInviteInfoReq = () => {
+        getInviteInfoReq()
+            .then((result) => {
+                console.log('成功回调！', result);
+            })
+            .catch((error) => {
+                console.log('失败回调！', error);
+            });
+    };
 
     render() {
-        return <div>++++自定义Axios++++</div>;
+        return (
+            <div>
+                <button onClick={this.getDialogConfig}>调get接口</button>
+                <br />
+                <br />
+                <button onClick={this.getInviteInfoReq}>调post接口</button>
+            </div>
+        );
     }
 }
 

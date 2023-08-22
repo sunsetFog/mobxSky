@@ -27,14 +27,14 @@ class Jump extends Component {
                 不可以起样式名
                 编译：<a href='/'>Home</a>
              */}
-                <Link to='/home'>Home</Link>
+                <Link to='/home/reactClass/attrBind'>去属性绑定</Link>
                 <br />
                 {/*
                 NavLink跳转
                 可以起样式名
                 编译：<a href='/react' className='hurray'>React</a>
              */}
-                <NavLink to='/react'>React</NavLink>
+                <NavLink to='/home/reactClass/lifeCycle'>去生命周期</NavLink>
             </section>
         );
     }

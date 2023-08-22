@@ -23,8 +23,9 @@ class Grandson extends Component {
     render() {
         return (
             <div>
-                ++++++++++++++++++++++++孙子组件++++++++++++++++++++++++
-                <DefineContext.Consumer>{(value) => <div>---{value}---</div>}</DefineContext.Consumer>
+                <DefineContext.Consumer>
+                    {(value) => <div>---{value ? value : '默认，没收到爷爷数据'}---</div>}
+                </DefineContext.Consumer>
             </div>
         );
     }

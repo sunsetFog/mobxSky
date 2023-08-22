@@ -23,12 +23,14 @@ const FatherAndSon = SuspenseLazy(
 );
 const ExJump = SuspenseLazy(() => import(/* webpackChunkName:"ex-jump" */ '@/routerView/home/reactClass/exJump'));
 const ExAxios = SuspenseLazy(() => import(/* webpackChunkName:"ex-axios" */ '@/routerView/home/reactClass/exAxios'));
-const ExVuex = SuspenseLazy(() => import(/* webpackChunkName:"ex-vuex" */ '@/routerView/home/reactClass/exVuex'));
+const ExRedux = SuspenseLazy(() => import(/* webpackChunkName:"ex-vuex" */ '@/routerView/home/reactClass/exRedux'));
 const Beautiful = SuspenseLazy(
     () => import(/* webpackChunkName:"Beautiful" */ '@/routerView/home/reactClass/beautiful')
 );
 const Hook1 = SuspenseLazy(() => import(/* webpackChunkName:"hook1" */ '@/routerView/home/hooks/hook1'));
-const ExRedux = SuspenseLazy(() => import(/* webpackChunkName:"ex-redux" */ '@/routerView/home/hooks/exRedux'));
+const ReduxToolkit = SuspenseLazy(
+    () => import(/* webpackChunkName:"ex-redux" */ '@/routerView/home/hooks/reduxToolkit')
+);
 const Instruct = SuspenseLazy(() => import(/* webpackChunkName:"instruct" */ '@/routerView/home/hooks/instruct'));
 const ExMobx = SuspenseLazy(() => import(/* webpackChunkName:"exMobx" */ '@/routerView/home/hooks/exMobx'));
 // const routes: RouteObject[] = [
@@ -72,9 +74,9 @@ const routes = [
                 menuType: 'type1'
             },
             {
-                path: '/home/reactClass/exVuex',
-                element: ExVuex,
-                name: '状态管理',
+                path: '/home/reactClass/exRedux',
+                element: ExRedux,
+                name: '状态管理redux',
                 menuType: 'type1'
             },
             {
@@ -90,8 +92,8 @@ const routes = [
                 menuType: 'type2'
             },
             {
-                path: '/home/reactClass/exRedux',
-                element: ExRedux,
+                path: '/home/reactClass/reduxToolkit',
+                element: ReduxToolkit,
                 name: '状态管理@reduxjs/toolkit',
                 menuType: 'type2'
             },

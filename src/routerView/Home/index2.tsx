@@ -4,7 +4,7 @@ import CX from 'classnames';
 import {observer} from 'mobx-react-lite';
 
 import styles from './index.modules.scss';
-import {getDialogConfig, getInviteInfoReq} from './services';
+import {getDialogConfig, getInviteInfoReq} from './reactClass/exAxios/services';
 import {useRequest} from 'ahooks';
 
 function Home() {

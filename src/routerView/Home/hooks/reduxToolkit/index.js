@@ -1,11 +1,13 @@
 import React, {useState, useEffect, useRef, useContext} from 'react';
 import {connect, useSelector, useDispatch} from 'react-redux';
-import {add, fetchChannelList} from '@/store2/modules/counterStore';
+import {modifyCount, fetchChannelList} from '@/reduxToolkitStore/modules/counterStore';
 
 import PropTypes from 'prop-types';
 // import {HashRouter as Router, Route, Switch, Redirect, Link, withRouter} from 'react-router-dom';
+import LineTextLine from '@/components/lineTextLine/index';
 
 function ExRedux(props) {
+    console.log('--props对象--', props);
     /*
         使用数据
         caught TypeError: (0 , _reactRedux.useSelector) is not a function
@@ -18,21 +20,22 @@ function ExRedux(props) {
     const beanWay = () => {
         console.log('--beanWay--');
         // 1. 生成action对象
-        const action = add(8);
+        const action = modifyCount(8);
         // 2. 提交action进行数据更新
         dispatch(action);
     };
 
+    // 异步调用接口，获取数据后用dispatch
     useEffect(() => {
-        // 调用接口
         dispatch(fetchChannelList());
     }, [dispatch]);
 
     return (
         <div>
-            使用数据: {count}
-            <br></br>
-            <button onClick={beanWay}>修改store中的数据</button>
+            <LineTextLine>使用redux_state数据</LineTextLine>
+            {count}
+            <LineTextLine>使用dispatch修改store中的数据</LineTextLine>
+            <button onClick={beanWay}>修改</button>
         </div>
     );
 }
@@ -53,6 +56,6 @@ function mapStateToProps(params) {
     };
 }
 
-// export default connect(mapStateToProps)(ExRedux);
+export default connect(mapStateToProps)(ExRedux);
 
-export default ExRedux;
+// export default ExRedux;

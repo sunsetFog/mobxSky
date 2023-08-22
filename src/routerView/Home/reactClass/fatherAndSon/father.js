@@ -9,6 +9,7 @@ const DefineContext = createContext();
 
 // 引入子组件  名字要大写
 import Son from './son';
+import LineTextLine from '@/components/lineTextLine/index';
 
 // @connect(
 //     state => ({nice: state.nice}),
@@ -29,19 +30,19 @@ class Father extends Component {
 
     componentDidMount() {
         console.log('--componentDidMount--渲染完成');
-        console.log('--打印this--', this);
-        console.log('ref指向Dom，this里建属性', this.inputName.value);
-        console.log('ref指向Dom', this.refs.fruit);
     }
 
     UNSAFE_componentWillReceiveProps() {
         console.log('--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用');
     }
     peach = () => {
-        console.log('peach=');
         this.setState({
             hill: '变桃子'
         });
+    };
+    magic = () => {
+        console.log('ref指向Dom', this.refs.fruit);
+        console.log('ref指向input', this.inputName.value);
     };
 
     render() {
@@ -50,14 +51,13 @@ class Father extends Component {
             hill: hill,
             water: water,
             flower: function (value) {
-                console.log('子传父', value);
+                console.log('子组件数据', value);
             }
         };
 
         return (
             <section>
-                ++++父组件++++
-                <br />
+                <LineTextLine>父组件</LineTextLine>
                 {/*
                 ref指向Dom, 就可以this.inputName.value
             */}
@@ -68,14 +68,24 @@ class Father extends Component {
                     }}
                     defaultValue='哈喽'
                 ></input>
-                <div ref='fruit'>可可</div>
-                <button onClick={this.peach.bind(this)}>修改父数据</button>
+                <br />
+                <br />
+                <button ref='fruit' onClick={this.magic}>
+                    使用ref
+                </button>
+                <br />
+                <br />
+                <button onClick={this.peach}>修改父数据</button>
+
+                <LineTextLine>子组件</LineTextLine>
                 {/*
-                hill参数会注入this.props对象里
-                {...draw} 简写   注入对象所有
-                Son用不了ref
-            */}
-                {/* <Son water={12}></Son> */}
+                    hill参数会注入this.props对象里
+                    <Son water={12}></Son>
+                    {...draw} 简写   注入对象所有
+                    Son用不了ref
+                    DefineContext.Provider是用来爷爷传孙子的 ???
+                */}
+
                 <DefineContext.Provider value={this.state.message}>
                     <Son {...draw}></Son>
                 </DefineContext.Provider>
