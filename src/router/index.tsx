@@ -18,7 +18,7 @@ const LifeCycle = SuspenseLazy(
     () => import(/* webpackChunkName:"life-cycle" */ '@/routerView/home/reactClass/lifeCycle')
 );
 const AttrBind = SuspenseLazy(() => import(/* webpackChunkName:"attr-bind" */ '@/routerView/home/reactClass/attrBind'));
-const FatherAndSon = SuspenseLazy(
+const FatherAndSon1 = SuspenseLazy(
     () => import(/* webpackChunkName:"father-and-son" */ '@/routerView/home/reactClass/fatherAndSon/father')
 );
 const ExJump = SuspenseLazy(() => import(/* webpackChunkName:"ex-jump" */ '@/routerView/home/reactClass/exJump'));
@@ -33,6 +33,9 @@ const ReduxToolkit = SuspenseLazy(
 );
 const Instruct = SuspenseLazy(() => import(/* webpackChunkName:"instruct" */ '@/routerView/home/hooks/instruct'));
 const ExMobx = SuspenseLazy(() => import(/* webpackChunkName:"exMobx" */ '@/routerView/home/hooks/exMobx'));
+const FatherAndSon2 = SuspenseLazy(
+    () => import(/* webpackChunkName:"exMobx" */ '@/routerView/home/hooks/fatherAndSon/father')
+);
 // const routes: RouteObject[] = [
 const routes = [
     {
@@ -57,7 +60,7 @@ const routes = [
             },
             {
                 path: '/home/reactClass/fatherAndSon',
-                element: FatherAndSon,
+                element: FatherAndSon1,
                 name: '父子组件',
                 menuType: 'type1'
             },
@@ -86,27 +89,33 @@ const routes = [
                 menuType: 'type1'
             },
             {
-                path: '/home/reactClass/hook1',
+                path: '/home/hooks/hook1',
                 element: Hook1,
                 name: 'hook1',
                 menuType: 'type2'
             },
             {
-                path: '/home/reactClass/reduxToolkit',
+                path: '/home/hooks/reduxToolkit',
                 element: ReduxToolkit,
                 name: '状态管理@reduxjs/toolkit',
                 menuType: 'type2'
             },
             {
-                path: '/home/reactClass/instruct',
+                path: '/home/hooks/instruct',
                 element: Instruct,
                 name: '指令',
                 menuType: 'type2'
             },
             {
-                path: '/home/reactClass/exMobx',
+                path: '/home/hooks/exMobx',
                 element: ExMobx,
                 name: '状态管理mobx',
+                menuType: 'type2'
+            },
+            {
+                path: '/home/hooks/fatherAndSon',
+                element: FatherAndSon2,
+                name: '父子组件',
                 menuType: 'type2'
             }
         ]

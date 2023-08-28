@@ -55,6 +55,9 @@ class Son extends Component {
     cakes() {
         this.props.flower('子组件参数');
     }
+    rewardInfo = (value) => {
+        console.log('--rewardInfo--', value);
+    };
     render() {
         const {
             state: {peach},

@@ -44,6 +44,9 @@ class Father extends Component {
         console.log('ref指向Dom', this.refs.fruit);
         console.log('ref指向input', this.inputName.value);
     };
+    cartoon = () => {
+        this.childTab2.rewardInfo(true);
+    };
 
     render() {
         const {hill, water} = this.state;
@@ -76,6 +79,9 @@ class Father extends Component {
                 <br />
                 <br />
                 <button onClick={this.peach}>修改父数据</button>
+                <br />
+                <br />
+                <button onClick={this.cartoon}>父调子方法</button>
 
                 <LineTextLine>子组件</LineTextLine>
                 {/*
@@ -87,7 +93,7 @@ class Father extends Component {
                 */}
 
                 <DefineContext.Provider value={this.state.message}>
-                    <Son {...draw}></Son>
+                    <Son {...draw} ref={(node) => (this.childTab2 = node)}></Son>
                 </DefineContext.Provider>
             </section>
         );

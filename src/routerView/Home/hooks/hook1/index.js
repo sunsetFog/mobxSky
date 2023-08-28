@@ -1,5 +1,5 @@
 // React应该是底层在调用，得引入
-import React, {useState, useEffect, useRef, useContext, createContext} from 'react';
+import React, {useState, useEffect, useRef, useContext, createContext, createRef} from 'react';
 const DefineContext = createContext();
 // import { useHistory } from 'react-router'
 import {compose} from 'redux';
@@ -12,10 +12,10 @@ import LineTextLine from '@/components/lineTextLine/index';
 */
 function Cosplay(props) {
     const [count, setCount] = useState(0);
-    const h1Foo = useRef(null);
+    const h1Foo = useRef(createRef());
 
     /*
-        函数副作用
+        函数副作用，渲染完成
         什么是副作用：
             副作用是相对于主作用来说的，一个函数除了主作用，其他的作用就是副作用。对于 React 组件来说，主作用就是根据数据（state/props）渲染 UI，除此之外都是副作用
         作用：
@@ -39,7 +39,7 @@ function Cosplay(props) {
         }
         fetchData();
 
-        console.log(`副作用: ${count}`, h1Foo);
+        console.log(`副作用: ${count}`);
         return () => {
             console.log('清理副作用, 比如：清理定时器');
             // clearInterval(timerId)
@@ -47,6 +47,9 @@ function Cosplay(props) {
     }, [count]);
     const beanWay = () => {
         setCount(9);
+    };
+    const honeyWay = () => {
+        console.log('--honeyWay--', h1Foo);
     };
     // const history = useHistory();
     const navigate = useNavigate();
@@ -68,11 +71,17 @@ function Cosplay(props) {
     return (
         <div>
             <LineTextLine>修改state数据</LineTextLine>
-            <button onClick={beanWay} ref={h1Foo}>
-                修改state
-            </button>
+            <button onClick={beanWay}>修改state</button>
             <LineTextLine>跳转</LineTextLine>
             <button onClick={jumpWay}>useHistory跳转</button>
+
+            {/*
+                特点：修改不会重新渲染，只定义一次
+            */}
+            <LineTextLine>useRef用于操作DOM，常量</LineTextLine>
+            <button onClick={honeyWay} ref={h1Foo}>
+                useRef
+            </button>
         </div>
     );
 }
