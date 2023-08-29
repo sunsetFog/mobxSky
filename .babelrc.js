@@ -1,3 +1,6 @@
+/*
+Babel配置文件,用于代码转换和 Polyfill。
+*/
 module.exports = {
     // 预设集合 (presets) 执行顺序: 从后往前。
     presets: [

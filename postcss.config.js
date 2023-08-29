@@ -1,3 +1,6 @@
+/*
+PostCSS 的配置文件, 对 CSS 进行处理和转换
+*/
 const pkg = require('./package.json');
 const plugins =
     pkg.platform === 'h5'

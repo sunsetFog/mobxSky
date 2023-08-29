@@ -1,3 +1,6 @@
+/*
+用于定义开发环境的 Webpack 配置
+*/
 const Webpack = require('webpack');
 const ip = require('ip'); // 获取 IP 地址实用程序
 // const ErrorOverlayPlugin = require('error-overlay-webpack-plugin'); // 这个插件将在你的应用程序中定位显示出错信息

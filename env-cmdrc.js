@@ -1,3 +1,7 @@
+/*
+env-cmd 是一个用于在 npm scripts 中设置环境变量的工具。
+*/
+
 require('ts-node').register();
 
 // 跨品牌共享配置

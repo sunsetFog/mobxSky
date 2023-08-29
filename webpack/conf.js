@@ -1,3 +1,6 @@
+/*
+环境变量或全局配置
+*/
 const path = require('path');
 
 const PROJECT_PATH = path.resolve(__dirname, '../');

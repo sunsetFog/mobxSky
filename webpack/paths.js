@@ -1,4 +1,6 @@
-/* eslint-disable guard-for-in */
+/*
+路径定义
+*/
 const path = require('path');
 const fs = require('fs');
 

@@ -1,3 +1,6 @@
+/*
+用于定义生产环境的 Webpack 配置
+*/
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 抽离css文件, 这个插件将CSS取到单独的文件中。它为每个包含CSS的JS文件创建一个CSS文件。它支持按需加载 CSS 和 SourceMaps。
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin'); // 这个插件优化和压缩css
 const WebpackObfuscator = require('webpack-obfuscator'); // 构建加密

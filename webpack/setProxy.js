@@ -1,3 +1,6 @@
+/*
+用于在开发环境下设置代理
+*/
 const {trimEnd} = require('sunny-js');
 
 const proxySettings = {};

@@ -1,3 +1,6 @@
+/*
+Webpack 配置
+*/
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server'); // 本地起一个 http 服务，可配置指定其端口/热更新...
 const chalk = require('chalk'); // 终端字符串样式个性化自定义

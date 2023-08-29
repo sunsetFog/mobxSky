@@ -1,3 +1,6 @@
+/*
+用于定义公共的 Webpack 配置
+*/
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 简化 HTML 文件创建以服务捆绑包的插件, 将js文件自动引进 html 文件中
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 抽离css文件, 这个插件将CSS取到单独的文件中。它为每个包含CSS的JS文件创建一个CSS文件。它支持按需加载 CSS 和 SourceMaps。
 const WebpackBar = require('webpackbar'); // 优雅的 Webpack 进度条和分析器

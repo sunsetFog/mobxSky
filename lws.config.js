@@ -1,3 +1,6 @@
+/*
+lws.config.js 是适用于 React 项目的轻量级打包和开发服务器工具 Parcel 的配置文件。
+*/
 const baseURL = process.env.REACT_APP_PLATFORM;
 /**
  * Configuration Management
