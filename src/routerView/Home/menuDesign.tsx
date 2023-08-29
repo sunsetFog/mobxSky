@@ -23,13 +23,19 @@ class menuDesign extends Component {
                 key: 'type2',
                 icon: <AppstoreOutlined />,
                 children: []
+            },
+            {
+                label: '业务模块',
+                key: 'type3',
+                icon: <AppstoreOutlined />,
+                children: []
             }
         ]
     };
     constructor(props) {
         super(props);
-        let routesArr2 = JSON.parse(JSON.stringify(routesArr));
-        routesArr2 = routesArr2[1].children;
+        let routesArr1 = JSON.parse(JSON.stringify(routesArr));
+        let routesArr2 = routesArr1[1].children;
         for (let i = 0; i < this.state.listArr.length; i++) {
             let item = this.state.listArr[i];
             for (let k = 0; k < routesArr2.length; k++) {
@@ -41,7 +47,17 @@ class menuDesign extends Component {
                     });
                 }
             }
+            for (let i = 0; i < routesArr1.length; i++) {
+                let row = routesArr1[i];
+                if (item.key == row.menuType) {
+                    item.children.push({
+                        label: row.name,
+                        key: row.path
+                    });
+                }
+            }
         }
+
         console.log('--listArr--', this.state.listArr);
     }
     menuWay(value) {

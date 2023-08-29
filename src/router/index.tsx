@@ -36,6 +36,9 @@ const ExMobx = SuspenseLazy(() => import(/* webpackChunkName:"exMobx" */ '@/rout
 const FatherAndSon2 = SuspenseLazy(
     () => import(/* webpackChunkName:"exMobx" */ '@/routerView/home/hooks/fatherAndSon/father')
 );
+const DragonBoatFestival = SuspenseLazy(
+    () => import(/* webpackChunkName:"dragonBoatFestival" */ '@/routerView/home/businessModule/dragonBoatFestival')
+);
 // const routes: RouteObject[] = [
 const routes = [
     {
@@ -119,6 +122,12 @@ const routes = [
                 menuType: 'type2'
             }
         ]
+    },
+    {
+        path: '/home/businessModule/dragonBoatFestival',
+        element: DragonBoatFestival,
+        name: '端午活动',
+        menuType: 'type3'
     },
     {
         path: 'about',

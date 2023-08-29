@@ -83,7 +83,7 @@ export async function fetchProxy<TResponse = Response | ResponseData>(
     let {
         url: _url,
         transformResponse = (data) => data.data, // 默认结构转换逻辑
-        allowTransformResponse = (data) => data.status_code === 6000 || data.status_code === 200, // 默认响应成功状态转换逻辑
+        allowTransformResponse = (data) => data.status_code === 6000 || data.status_code === 200 || data.code == '200', // 默认响应成功状态转换逻辑
         replaceTextFun = replaceTextByPairs,
         noTextReplace,
         ..._params
@@ -118,6 +118,7 @@ export async function fetchProxy<TResponse = Response | ResponseData>(
                 });
             }
             const contentType = response.headers.get('content-type');
+            console.log('--contentType--', contentType);
 
             if (contentType?.includes('application/json') || /^\/proxy/.test(_url)) {
                 let parsedResponse: Promise<ResponseData>;
