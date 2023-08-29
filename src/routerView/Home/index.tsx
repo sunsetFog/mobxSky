@@ -68,6 +68,7 @@ class Nice extends Component {
                     <div className={styles['header']}></div>
 
                     <main className={styles['pen-router-view']}>
+                        {/* Outlet支持嵌套路由 */}
                         <Outlet />
                     </main>
                 </div>

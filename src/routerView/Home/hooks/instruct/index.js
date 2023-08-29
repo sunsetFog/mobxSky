@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef, useContext} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import LineTextLine from '@/components/lineTextLine/index';
+import {useNavigate, useLocation} from 'react-router-dom';
 // import {
 //     HashRouter as Router,
 //     Route,
@@ -17,6 +18,8 @@ import LineTextLine from '@/components/lineTextLine/index';
 function InstructUnit(props) {
     const [openBay, setOpenBay] = useState(false);
     const [listBay, setListBay] = useState([1, 5, 10]);
+    const params = useLocation();
+    console.log('useNavigate跳转，参数接收', params);
 
     console.log('--props--', props);
     // 报错：caught TypeError: (0 , _reactRouterDom.useSearchParams) is not a function

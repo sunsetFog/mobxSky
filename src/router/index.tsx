@@ -8,10 +8,7 @@ import {Navigate, RouteObject} from 'react-router-dom';
 import {extend} from 'dayjs';
 
 const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/routerView/home'));
-// const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/routerView/home/HomeOne'));
-const About = SuspenseLazy(
-    () => import(/* webpackChunkName:"about" */ /* webpackPrefetch: true */ '@/routerView/About')
-);
+
 const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/routerView/404'));
 
 const LifeCycle = SuspenseLazy(
@@ -128,10 +125,6 @@ const routes = [
         element: DragonBoatFestival,
         name: '端午活动',
         menuType: 'type3'
-    },
-    {
-        path: 'about',
-        element: About
     },
     // 未匹配到页面
     {
