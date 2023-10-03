@@ -2,6 +2,9 @@
 编译TypeScript的配置文件
 tsconfig.json 配置参考(有其他开发规范): https://lq782655835.github.io/blogs/project/ts-tsconfig.html
 
+在变量名前加下划线 _text 表示意图声明未使用的变量
+onCopy={(_text, result) => {
+
 关闭此错误的类型检查:
 方式1: 忽略，使用 // @ts-ignore 忽略此行类型检查。
 方式2: 断言，as any 临时关闭类型检查。
