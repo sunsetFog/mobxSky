@@ -1,6 +1,27 @@
 /*
-css的检查
+css的检查，stylelint样式规则校验
 提高 CSS 代码质量
+
+配置 git commit 时使用 stylelint 检查样式文件
+npm install --save-dev stylelint husky
+
+
+.stylelintrc.js 和 stylelint.config.js 都是 stylelint 的配置文件,二者的区别是:
+1. 文件名称不同:
+- .stylelintrc.js 中间有一个点
+- stylelint.config.js 没有点
+2. 导出方式不同:
+- .stylelintrc.js 通过 module.exports 导出配置
+- stylelint.config.js 直接导出配置对象
+3. 默认导出配置不同:
+- .stylelintrc.js 会自动寻找并导出配置
+- stylelint.config.js 需要手动导出配置对象
+4. 扩展配置不同:
+- .stylelintrc.js 支持 extends 继承配置
+- stylelint.config.js 不支持 extends
+综上:
+- .stylelintrc.js 更方便,自动寻找导出配置,支持扩展
+- stylelint.config.js 更简单,但需要手动导出配置
 */
 module.exports = {
     extends: [
