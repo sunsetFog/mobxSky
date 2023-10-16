@@ -13,10 +13,20 @@ const {imageInlineSizeLimit, imageBase64Path, shouldBase64FromFileEnd} = require
 console.log(paths.appDefineVariable);
 console.log('isDevelopment', isDevelopment);
 
-// scss模块话配置， 在dev环境展示class名字包含组建名称
+/*
+在dev环境中，自定义的静态资源文件名格式
+webpack内置的模板变量
+- [hash] - 根据资源内容生成的 hash 字符串,用于版本管理
+- [name] - 资源原始名称
+- [ext] - 资源原始扩展名
+- [path] - 资源相对于 webpack config 文件的路径
+- [folder] - 资源所在文件夹名称
+- [query] - 资源查询字符串
+- [emoji] - 一个随机的表情符号
+*/
 const _modules = {
     exportGlobals: true,
-    localIdentName: '[name]__[local]--[hash:base64:5]'
+    localIdentName: '[path]__[name]__[local]--[hash:base64:5]'
 };
 if (isProduction) {
     delete _modules.localIdentName;
