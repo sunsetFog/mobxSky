@@ -43,10 +43,10 @@ import { formatDuration, initUpdateDuration } from './utils';
 // 子组件
 import AddModal from './addModal';
 
-import TableService from '@/@sky/@library/tableService';
+import TableService from '@/@energy/@library/tableService';
 
 // 第一个是export default导出，第二个export导出
-import hocTabPage, { initState } from '@/@sky/@higherOrder/hocTabPage';
+import hocTabPage, { initState } from '@/@energy/@higherOrder/hocTabPage';
 
 // @connect(
 //     state => ({ nice: state.nice }),

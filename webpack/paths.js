@@ -25,7 +25,9 @@ const moduleFileExtensions = ['ts', 'tsx', 'js', 'jsx'];
  */
 function resolveModule(resolveFn, filePath) {
     // Check if the file exists
-    const extension = moduleFileExtensions.find((ex) => fs.existsSync(resolveFn(`${filePath}.${ex}`)));
+    const extension = moduleFileExtensions.find((ex) =>
+        fs.existsSync(resolveFn(`${filePath}.${ex}`)),
+    );
 
     if (extension) {
         return resolveFn(`${filePath}.${extension}`);
@@ -52,11 +54,12 @@ module.exports = {
     appNodeModules: resolveApp('node_modules'), // node_modules path
     appMock: resolveApp('mock'),
     appSrc: resolveApp('src'),
+    appSky: resolveApp('../../'),
     appSrcComponents: resolveApp('src/components'),
     appSrcUtils: resolveApp('src/utils'),
     appProxySetup: resolveModule(resolveApp, 'webpack/setProxy'),
     appPackageJson: resolveApp('package.json'),
     appTsConfig: resolveApp('tsconfig.json'),
     appSvg: resolveApp('src/assets/icons'),
-    moduleFileExtensions
+    moduleFileExtensions,
 };

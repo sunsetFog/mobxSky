@@ -87,6 +87,7 @@ const config = {
         extensions: ['.tsx', '.ts', '.js', '.json', '.scss', '.less'],
         alias: {
             '@': paths.appSrc,
+            '@sky': paths.appSky,
             mock: paths.appMock,
             Components: paths.appSrcComponents,
             Utils: paths.appSrcUtils

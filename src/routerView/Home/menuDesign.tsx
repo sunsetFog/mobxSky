@@ -6,7 +6,7 @@ import { AppstoreOutlined } from '@ant-design/icons';
 
 import routesArr from '@/router/index';
 import history from '@/utils/history';
-import withNavigation from '@/@sky/@higherOrder/withNavigation';
+import withNavigation from '@/@energy/@higherOrder/withNavigation';
 
 class menuDesign extends Component {
     state = {
