@@ -88,6 +88,7 @@ const config = {
         alias: {
             '@': paths.appSrc,
             '@sky': paths.appSky,
+            '@root': paths.appRoot,
             mock: paths.appMock,
             Components: paths.appSrcComponents,
             Utils: paths.appSrcUtils

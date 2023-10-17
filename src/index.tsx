@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from 'react-router-dom';
-import {StoresProvider, stores} from '@/store';
+import { BrowserRouter } from 'react-router-dom';
+import { StoresProvider, stores } from '@/store';
 import AppRouter from '@/AppRouter';
 // toolkitStore的使用
-import {Provider, connect} from 'react-redux'; // 用Provider, 才能用connect
+import { Provider, connect } from 'react-redux'; // 用Provider, 才能用connect
 import toolkitStore from '@/reduxToolkitStore';
+
+// 加载全局样式
+import '@root/global.css';
+import '@root/global.less';
+import '@root/global.scss';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement as HTMLDivElement);
@@ -18,7 +23,7 @@ root.render(
         {/* <Provider store={toolkitStore}>
             <AppRouter />
         </Provider> */}
-    </BrowserRouter>
+    </BrowserRouter>,
     // <HashRouter>
     //     <StoresProvider value={stores}>
     //         <AppRouter />

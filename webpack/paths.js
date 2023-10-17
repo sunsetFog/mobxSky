@@ -54,6 +54,7 @@ module.exports = {
     appNodeModules: resolveApp('node_modules'), // node_modules path
     appMock: resolveApp('mock'),
     appSrc: resolveApp('src'),
+    appRoot: resolveApp('./'),
     appSky: resolveApp('../../'),
     appSrcComponents: resolveApp('src/components'),
     appSrcUtils: resolveApp('src/utils'),
