@@ -1,17 +1,18 @@
 // React应该是底层在调用，得引入
-import React, {useState, useEffect, useRef, useContext, createContext, createRef} from 'react';
+import React, { useState, useEffect, useRef, useContext, createContext, createRef } from 'react';
 const DefineContext = createContext();
 // import { useHistory } from 'react-router'
-import {compose} from 'redux';
-import {connect} from 'react-redux';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {useHistory, useNavigate, NavLink} from 'react-router-dom';
+import { useHistory, useNavigate, NavLink } from 'react-router-dom';
 import LineTextLine from '@/components/lineTextLine/index';
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
 */
 function Cosplay(props) {
-    const [count, setCount] = useState(0);
+    const [countOf1, setCount1] = useState(0);
+    const [countOf2, setCount2] = useState(0);
     const h1Foo = useRef(createRef());
 
     /*
@@ -38,15 +39,30 @@ function Cosplay(props) {
             // const res = await customAxios.get('http://geek.itheima.net/v1_0/channels');
         }
         fetchData();
+        if (countOf1 == 0 && countOf2 == 0) {
+            console.log(`初始化执行: ${countOf1} --- ${countOf2}`);
+        }
 
-        console.log(`副作用: ${count}`);
-        return () => {
-            console.log('清理副作用, 比如：清理定时器');
-            // clearInterval(timerId)
-        };
-    }, [count]);
-    const beanWay = () => {
-        setCount(9);
+        if (countOf1 != 0 && countOf2 != 0) {
+            console.log(`副作用，更新后的值2: ${countOf1} --- ${countOf2}`);
+        }
+
+        // return () => {
+        //     console.log('清理副作用, 比如：清理定时器');
+        //     // clearInterval(timerId)
+        // };
+    }, [countOf1, countOf2]);
+    const beanWay = (value) => {
+        if (value == 1) {
+            setCount1(countOf1 + 1);
+        } else if (value == 2) {
+            setCount2(countOf2 + 1);
+        }
+        // 该函数内执行完，就执行定时器，所以还是旧值
+        setTimeout(() => dealWith(), 0);
+    };
+    const dealWith = () => {
+        console.log('-dealWith-还是旧值-', countOf1, '---', countOf2);
     };
     const honeyWay = () => {
         console.log('--honeyWay--', h1Foo);
@@ -64,14 +80,15 @@ function Cosplay(props) {
     };
 
     const [list, setList] = useState([]);
-    console.log('--props--', props);
-    console.log('--useState--', count, '---', list);
 
-    console.log('--useContext使用Context数据--', useContext(DefineContext));
+    // console.log('--useContext使用Context数据--', useContext(DefineContext));
     return (
         <div>
             <LineTextLine>修改state数据</LineTextLine>
-            <button onClick={beanWay}>修改state</button>
+            <button onClick={() => beanWay(1)}>修改state值: {countOf1}</button>
+            <br />
+            <br />
+            <button onClick={() => beanWay(2)}>修改state值: {countOf2}</button>
             <LineTextLine>跳转</LineTextLine>
             <button onClick={jumpWay}>useNavigate跳转</button>
             <br />
@@ -91,17 +108,17 @@ function Cosplay(props) {
 
 // 设置属性默认值
 Cosplay.defaultProps = {
-    colors: '蓝色'
+    colors: '蓝色',
 };
 // 设置属性类型约束
 Cosplay.propTypes = {
-    colors: PropTypes.string
+    colors: PropTypes.string,
 };
 
 function mapStateToProps(params) {
     console.log('-mapStateToProps-', params);
     return {
-        state: params.example
+        state: params.example,
     };
 }
 // props对象加入了state,dispatch,history属性   history用于跳转

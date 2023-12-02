@@ -24,12 +24,12 @@ webpack内置的模板变量
 - [query] - 资源查询字符串
 - [emoji] - 一个随机的表情符号
 */
-const _modules = {
+const modulesObj = {
     exportGlobals: true,
     localIdentName: '[path]__[name]__[local]--[hash:base64:5]'
 };
 if (isProduction) {
-    delete _modules.localIdentName;
+    delete modulesObj.localIdentName;
 }
 
 const cssLoaders = (importLoaders) => [
@@ -38,7 +38,7 @@ const cssLoaders = (importLoaders) => [
     {
         loader: 'css-loader', // 主要是解析css文件中的@import和url语句，处理css-modules，并将结果作为一个js模块返回
         options: {
-            modules: _modules, //
+            modules: modulesObj, //
             sourceMap: isDevelopment, // 开发环境开启
             importLoaders // 执行顺序: 需要先被 less-loader postcss-loader (所以这里设置为 2)
             // 0 => no loaders (default);
