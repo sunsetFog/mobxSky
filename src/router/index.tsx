@@ -22,11 +22,12 @@ const files = require.context('../', true, /\/router\.ts$/);
 console.log('files.keys()===', files.keys());
 let secondArr = [];
 files.keys().forEach((item) => {
-    let filesContent = files(item).default;
-    console.log('context===', filesContent);
-    filesContent.path = item.slice(12, -10);
-    filesContent.element = SuspenseLazy(filesContent.content);
-    secondArr.push(filesContent);
+    let filesObj = files(item).default;
+    // console.log('context===', filesObj);
+    filesObj.path = item.slice(12, -10);
+    filesObj.element = SuspenseLazy(filesObj.content);
+    delete filesObj.content;
+    secondArr.push(filesObj);
 });
 console.log('secondArr===', secondArr);
 
