@@ -128,6 +128,7 @@
         "dompurify": "^3.0.5",
         "fingerprintjs2": "^2.1.4",
         "history": "^5.3.0",
+        "html2canvas": "^1.4.1",
         "javascript-obfuscator": "^4.0.2",
         "lodash-es": "^4.17.21",
         "mobx": "^6.9.0",
