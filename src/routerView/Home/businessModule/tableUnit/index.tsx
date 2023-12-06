@@ -73,6 +73,9 @@ function tableUnit(props: any) {
     useEffect(() => {});
     return (
         <section className={styles.tableUnit}>
+            <button>批量编辑</button>
+            <br />
+            <br />
             <TableCheckbox columnList={columnList} tableData={tableData}></TableCheckbox>
         </section>
     );
