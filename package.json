@@ -123,7 +123,7 @@
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
         "antd": "^5.8.4",
-        "crypto-js": "^4.1.1",
+        "crypto-js": "^4.2.0",
         "dayjs": "^1.10.4",
         "dompurify": "^3.0.5",
         "fingerprintjs2": "^2.1.4",
