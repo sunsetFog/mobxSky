@@ -1,4 +1,4 @@
-import React, {Component, createContext} from 'react';
+import React, { Component, createContext } from 'react';
 const DefineContext = createContext();
 // 状态管理
 // import {bindActionCreators} from 'redux';
@@ -20,7 +20,7 @@ class Father extends Component {
     state = {
         hill: '山6',
         water: '水6',
-        message: '父组件的数据'
+        message: '父组件的数据',
     };
 
     constructor(props) {
@@ -37,47 +37,26 @@ class Father extends Component {
     }
     peach = () => {
         this.setState({
-            hill: '变桃子'
+            hill: '变桃子',
         });
-    };
-    magic = () => {
-        console.log('ref指向Dom', this.refs.fruit);
-        console.log('ref指向input', this.inputName.value);
     };
     cartoon = () => {
         this.childTab2.rewardInfo(true);
     };
 
     render() {
-        const {hill, water} = this.state;
+        const { hill, water } = this.state;
         let draw = {
             hill: hill,
             water: water,
             flower: function (value) {
                 console.log('子组件数据', value);
-            }
+            },
         };
 
         return (
             <section>
                 <LineTextLine>父组件</LineTextLine>
-                {/*
-                ref指向Dom, 就可以this.inputName.value
-            */}
-                <input
-                    type='text'
-                    ref={(input) => {
-                        this.inputName = input;
-                    }}
-                    defaultValue='哈喽'
-                ></input>
-                <br />
-                <br />
-                <button ref='fruit' onClick={this.magic}>
-                    使用ref
-                </button>
-                <br />
-                <br />
                 <button onClick={this.peach}>修改父数据</button>
                 <br />
                 <br />
