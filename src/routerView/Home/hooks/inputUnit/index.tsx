@@ -6,7 +6,7 @@ import LineTextLine from '@/components/lineTextLine/index';
 function inputUnit(props) {
     const [intActive, setIntOfActive] = useState(false);
     const [intDef, setIntOfDef] = useState('嘿嘿');
-    const intRef = useRef();
+    const intRef = useRef<HTMLInputElement>();
     const peachWay = () => {
         setIntOfActive(true);
         /*

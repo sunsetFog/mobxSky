@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 // import { observer } from 'mobx-react';
 // component
 import { compose } from '@/utils/redux';
-import WebsocketUnit from '@/@energy/@pcDesign/components/websocketUnit';
+import WebsocketUnit from '@/@energy/@higherOrder/websocketUnit';
 
 function redEnvelope(props: any) {
     console.log('--红包雨--', props);
