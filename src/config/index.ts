@@ -11,8 +11,8 @@ export const guest_form_password = decrypt(process.env.REACT_APP_GUEST_FORM_PASS
 // 拆解process.env，可以做到按需使用。DefinePlugin也不会把process.env内部属性全部提取生成object
 export const SERVER_URL = process.env.REACT_APP_SERVER_VIDEO_URL;
 export const NODE_ENV = process.env.NODE_ENV;
-// 是否为bob
-export const isBob = process.env.REACT_APP_PLATFORM === 'bob';
+// 是否为bd
+export const isBd = process.env.REACT_APP_PLATFORM === 'bd';
 // export const config = require(`@/theme/${process.env.REACT_APP_PLATFORM}/config`).default;
 
 export default {

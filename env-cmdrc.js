@@ -7,17 +7,17 @@ require('ts-node').register();
 // 跨品牌共享配置
 const MAP = {
     dev: {
-        REACT_APP_API_MICROSERVICE_URL: 'https://testing-microservices.yk8s.in'
+        REACT_APP_API_MICROSERVICE_URL: 'https://testing-microservices.yk8s.in',
     },
     release: {
-        REACT_APP_API_MICROSERVICE_URL: 'https://production-microservices.yk8s.in'
+        REACT_APP_API_MICROSERVICE_URL: 'https://production-microservices.yk8s.in',
     },
     prod: {
-        REACT_APP_API_MICROSERVICE_URL: 'https://production-microservices.yk8s.in'
-    }
+        REACT_APP_API_MICROSERVICE_URL: 'https://production-microservices.yk8s.in',
+    },
 };
 
-const {encrypt} = require('./src/utils/encrypt');
+const { encrypt } = require('./src/utils/encrypt');
 
 const dev_username = encrypt('testhangaround');
 const dev_password = encrypt('testhangaround');
@@ -41,24 +41,24 @@ function getGitCommit() {
 const BUILD_VERSION = getGitCommit();
 
 const PLATFORM_MAP = {
-    // BOB
-    bob: {
+    // bd
+    bd: {
         // 各个环境公用的变量
         common: {
             SERVER_PORT: 6001, // 本地开发/服务器启动环境端口
             SECURITY_PORT: 16001, // 安全检查版H5服务端口
             SPORT_PORT: 19002, // 体育h5服务端口
             REACT_APP_TEXT_REPLACEMENT_PAIRS: JSON.stringify([
-                ['BOB', '半岛'] //
+                ['bd', '半岛'], //
             ]),
-            REACT_APP_VERSION: BUILD_VERSION
+            REACT_APP_VERSION: BUILD_VERSION,
         },
         // 测试环境
         dev: {
             REACT_APP_API_SPORT_BASE_URLS: {
                 IMTY: 'https://ybbw031-mxxmm-test.imapi.net',
                 YBTY: 'https://api2.sportxxx278gwf4.com',
-                FBTY: 'https://sportapi.fastball2.com'
+                FBTY: 'https://sportapi.fastball2.com',
             }, // 三方体育api域名（launch接口会返回，此配置为默认api值）
             REACT_APP_API_BASE_URL: 'http://h5.fgry45iy.com',
             REACT_APP_GUEST_FORM_USERNAME: dev_username,
@@ -67,7 +67,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: '5EFTXZMKjWoLtPrA',
             REACT_APP_GUEST_FINANCE_AES_KEY: '7CAvvV1+QeaxMdqM2Wp4gbeRhS4s2BAv',
             REACT_APP_GUEST_FINANCE_AES_IV: '2oblNID+45RaQPV2',
-            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80' // 视频访问域名
+            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
         release: {
             REACT_APP_API_BASE_URL: 'https://pre-h5.sstjxbb.com',
@@ -77,7 +77,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: release_aes_iv,
             REACT_APP_GUEST_FINANCE_AES_KEY: release_finance_aes_key,
             REACT_APP_GUEST_FINANCE_AES_IV: release_finance_aes_iv,
-            REACT_APP_REACT_APPSERVER_VIDEO_URL: 'http://16.162.206.193:80' // 视频访问域名
+            REACT_APP_REACT_APPSERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
         // 生产环境
         prod: {
@@ -88,8 +88,8 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: release_aes_iv,
             REACT_APP_GUEST_FINANCE_AES_KEY: release_finance_aes_key,
             REACT_APP_GUEST_FINANCE_AES_IV: release_finance_aes_iv,
-            REACT_APP_SERVER_VIDEO_URL: 'http://p1.video.com'
-        }
+            REACT_APP_SERVER_VIDEO_URL: 'http://p1.video.com',
+        },
     },
     // 天博
     tb: {
@@ -97,7 +97,7 @@ const PLATFORM_MAP = {
         common: {
             SERVER_PORT: 6002, // 本地开发/服务器启动环境端口
             REACT_APP_VERSION: BUILD_VERSION,
-            SECURITY_PORT: 16002 // 安全检查版H5服务端口
+            SECURITY_PORT: 16002, // 安全检查版H5服务端口
         },
         // 测试环境
         dev: {
@@ -108,7 +108,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: 'p6VSBZWtFalCw8w9',
             REACT_APP_GUEST_FINANCE_AES_KEY: '7CAvvV1+QeaxMdqM2Wp4gbeRhS4s2BAv',
             REACT_APP_GUEST_FINANCE_AES_IV: '2oblNID+45RaQPV2',
-            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80' // 视频访问域名
+            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
         release: {
             REACT_APP_API_BASE_URL: 'https://pre-h5.theyyone.com',
@@ -118,7 +118,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: release_aes_iv,
             REACT_APP_GUEST_FINANCE_AES_KEY: release_finance_aes_key,
             REACT_APP_GUEST_FINANCE_AES_IV: release_finance_aes_iv,
-            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80' // 视频访问域名
+            REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
         // 生产环境
         prod: {
@@ -129,23 +129,23 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_AES_IV: release_aes_iv,
             REACT_APP_GUEST_FINANCE_AES_KEY: release_finance_aes_key,
             REACT_APP_GUEST_FINANCE_AES_IV: release_finance_aes_iv,
-            REACT_APP_SERVER_VIDEO_URL: 'http://p2.video.com'
-        }
-    }
+            REACT_APP_SERVER_VIDEO_URL: 'http://p2.video.com',
+        },
+    },
 };
 
 // 环境列表
 const ENV_LIST = [
     'dev', // 测试环境
     'release', // 预发环境
-    'prod' // 生产环境
+    'prod', // 生产环境
 ];
 
 module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
     // 当前平台值
     const result = PLATFORM_MAP[curr];
     // 获取当前端口
-    const {SERVER_PORT, SECURITY_PORT, ...restCommon} = result.common || {};
+    const { SERVER_PORT, SECURITY_PORT, ...restCommon } = result.common || {};
 
     // 开发环境
     ENV_LIST.forEach((item) => {
@@ -154,11 +154,11 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
                 REACT_APP_PLATFORM: curr,
                 REACT_APP_ENV: item,
                 PORT: SERVER_PORT,
-                REACT_APP_GAMES_GROUP: item != 'prod' ? 'security' : ''
+                REACT_APP_GAMES_GROUP: item != 'prod' ? 'security' : '',
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
         prev[`server:${item}:${curr}:security`] = Object.assign(
             {},
@@ -167,11 +167,11 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
                 REACT_APP_PLATFORM: curr,
                 REACT_APP_ENV: item,
                 PORT: SECURITY_PORT,
-                REACT_APP_GAMES_GROUP: 'security'
+                REACT_APP_GAMES_GROUP: 'security',
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
     });
     // 构建环境
@@ -180,12 +180,12 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
             {
                 REACT_APP_PLATFORM: curr,
                 REACT_APP_ENV: item,
-                NODE_ENV: 'production'
+                NODE_ENV: 'production',
                 // REACT_APP_GAMES_GROUP: item != 'prod' ? 'security' : '',// 测试环境ssg 服务端拿不到cookie和路由参数 移动端页面会闪动该模式下的最好不适用于app
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
         prev[`build:${item}:${curr}:security`] = Object.assign(
             {},
@@ -195,11 +195,11 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
                 REACT_APP_ENV: item,
                 PORT: SECURITY_PORT,
                 REACT_APP_GAMES_GROUP: 'security',
-                NODE_ENV: 'production'
+                NODE_ENV: 'production',
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
     });
 
@@ -210,23 +210,23 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
                 REACT_APP_PLATFORM: curr,
                 REACT_APP_ENV: item,
                 NODE_ENV: 'production',
-                PORT: process.env.PORT || SERVER_PORT
+                PORT: process.env.PORT || SERVER_PORT,
                 // REACT_APP_GAMES_GROUP: item != 'prod' ? 'security' : '',
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
         prev[`start:${item}:${curr}:security`] = Object.assign(
             {},
             prev[`start:${item}:${curr}`],
             {
                 PORT: process.env.PORT || SECURITY_PORT,
-                REACT_APP_GAMES_GROUP: 'security'
+                REACT_APP_GAMES_GROUP: 'security',
             },
             restCommon,
             result[item],
-            MAP[item]
+            MAP[item],
         );
     });
 
@@ -234,10 +234,10 @@ module.exports = Object.keys(PLATFORM_MAP).reduce((prev, curr) => {
     prev[`analyze:${curr}`] = Object.assign(
         {
             REACT_APP_PLATFORM: curr,
-            ANALYZE: true
+            ANALYZE: true,
         },
         restCommon,
-        result.prod
+        result.prod,
     );
 
     // 返回数据

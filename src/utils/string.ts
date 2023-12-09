@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {isString} from 'lodash-es';
+import { isString } from 'lodash-es';
 export function noEmoji(str) {
     const ranges = ['\ud83c[\udf00-\udfff]', '\ud83d[\udc00-\ude4f]', '\ud83d[\ude80-\udeff]'];
     return str.replace(new RegExp(ranges.join('|'), 'g'), '');
@@ -37,7 +37,9 @@ export function replaceTextByPairs(text: string, replacementPairs: Array<string[
 // 请求反序列化
 export function reverseTextByPairs(value: string) {
     try {
-        const data = JSON.parse(process.env.REACT_APP_TEXT_REPLACEMENT_PAIRS as string).map((item) => item.reverse());
+        const data = JSON.parse(process.env.REACT_APP_TEXT_REPLACEMENT_PAIRS as string).map(
+            (item) => item.reverse(),
+        );
         return replaceTextByPairs(value, data);
     } catch (err) {
         return value;
@@ -69,7 +71,7 @@ export function replaceTextByPairsStrict(text: string, replacementPairs: Array<s
 }
 /**
  * 根据替换数量风险选择 replaceTextByDefaultPairs / revertTextByDefaultPairs
- * 页面内 半岛->BOB 字符串反向还原函数
+ * 页面内 半岛->BD 字符串反向还原函数
  * 结合 replaceTextByPairsStrict 使用【接口处需 replaceTextFun 替换为 replaceTextByPairsStrict】
  * 遍历配对的字符串搜索替换数组，执行字符串替换操作
  * @param text 待处理的字符串
@@ -79,12 +81,12 @@ export function revertTextByDefaultPairs(text: string) {
     if (!isString(text)) return text;
     return replaceTextByPairs(
         text,
-        JSON.parse(process.env.REACT_APP_TEXT_REPLACEMENT_PAIRS).map((item) => item.reverse())
+        JSON.parse(process.env.REACT_APP_TEXT_REPLACEMENT_PAIRS).map((item) => item.reverse()),
     );
 }
 /**
  * 根据替换数量风险选择 replaceTextByDefaultPairs / revertTextByDefaultPairs
- * 页面内BOB->半岛字符串替换函数
+ * 页面内BD->半岛字符串替换函数
  * 遍历配对的字符串搜索替换数组，执行字符串替换操作
  * @param text 待处理的字符串
  * @example

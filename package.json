@@ -17,9 +17,9 @@
         "template"
     ],
     "scripts": {
-        "server:dev:bob": "env-cmd -e server:dev:bob  -r ./env-cmdrc.js node --trace-deprecation  webpack/server",
-        "build:prod:bob": "env-cmd -e build:prod:bob  -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
-        "analyze:bob": "env-cmd -e analyze:bob -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
+        "server:dev:bd": "env-cmd -e server:dev:bd  -r ./env-cmdrc.js node --trace-deprecation  webpack/server",
+        "build:prod:bd": "env-cmd -e build:prod:bd  -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
+        "analyze:bd": "env-cmd -e analyze:bd -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
         "clean": "rm -rf node_modules",
         "// 本地服务": "",
         "ws": "ws --config-file lws.config.js",
