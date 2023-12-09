@@ -18,6 +18,7 @@
     ],
     "scripts": {
         "server:dev:bd": "env-cmd -e server:dev:bd  -r ./env-cmdrc.js node --trace-deprecation  webpack/server",
+        "server:dev:tb": "env-cmd -e server:dev:tb  -r ./env-cmdrc.js node --trace-deprecation  webpack/server",
         "build:prod:bd": "env-cmd -e build:prod:bd  -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
         "analyze:bd": "env-cmd -e analyze:bd -r ./env-cmdrc.js  webpack --config ./webpack/config/webpack.prod.js ",
         "clean": "rm -rf node_modules",
@@ -100,6 +101,7 @@
         "prettier": "^2.8.8",
         "sass": "^1.64.1",
         "sass-loader": "^13.3.2",
+        "sass-resources-loader": "^2.2.5",
         "style-loader": "^3.3.2",
         "stylelint": "^14.16.1",
         "stylelint-config-prettier": "^9.0.5",

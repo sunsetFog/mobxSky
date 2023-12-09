@@ -49,4 +49,14 @@
             }
         }
     }
+    .grassBox {
+        width: 170px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 20px !important;
+        @include bd-button-bg();
+        &:hover {
+            @include bd-button-active-bg();
+        }
+    }
 }

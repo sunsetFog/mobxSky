@@ -40,6 +40,8 @@ function niceShadow(props: any) {
                     <img src={require('./img/icon_search.png')} />
                 </div>
             </div>
+            <LineTextLine>按钮的外部阴影</LineTextLine>
+            <button className={styles.grassBox}>立即下载</button>
         </section>
     );
 }

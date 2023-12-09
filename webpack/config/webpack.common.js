@@ -127,6 +127,13 @@ const config = {
                         options: {
                             sourceMap: isDevelopment
                         }
+                    },
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: `${paths.appSrc}/@energy/styles/platform/${process.env.REACT_APP_PLATFORM}/scssVariable.scss`,
+                            hoistUseStatements: true,
+                        },
                     }
                 ]
             },
