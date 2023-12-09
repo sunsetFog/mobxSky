@@ -1,6 +1,9 @@
+/*
+使用 Fingerprint 对象来生成浏览器指纹
+*/
 import Fingerprint from 'fingerprintjs2';
 // utils
-import {isBrowser} from '@/utils/detect';
+import { isBrowser } from '@/utils/detect';
 // store
 // import homeStore from '@/pages/home/index.store';
 

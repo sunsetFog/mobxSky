@@ -2,17 +2,16 @@ import AES from 'crypto-js/aes';
 import enc_utf8 from 'crypto-js/enc-utf8';
 import pkcs7 from 'crypto-js/pad-pkcs7';
 import HmacSHA256 from 'crypto-js/hmac-sha256';
-import {getSessionUserId} from '@/utils/helpers';
-import {getUUID} from '@/utils/fingerprint';
-import {LocalGuestToken} from '@/utils/utils_token';
-import {token} from './sharedHeaders';
+import { getSessionUserId } from '@/utils/helpers';
+import { getUUID } from '@/utils/fingerprint';
+import { LocalGuestToken } from '@/utils/utils_token';
 
 export function getVisitHeaders(): any {
     const userToken = LocalGuestToken.getToken();
     if (userToken) {
         return {
             'X-API-TOKEN': userToken,
-            needVisitToken: true
+            needVisitToken: true,
         };
     }
     return {};
@@ -37,7 +36,7 @@ export function createXHRPost(params: any) {
     };
     xhr.open('POST', params.url, true);
     xhr.setRequestHeader('client-type', 'h5');
-    xhr.setRequestHeader('X-API-TOKEN', token());
+    xhr.setRequestHeader('X-API-TOKEN', 'token');
     xhr.setRequestHeader('X-API-ID', getSessionUserId());
     xhr.setRequestHeader('X-API-UUID', getUUID());
     xhr.send(params.data);
@@ -78,14 +77,14 @@ function getRandom(num = 11) {
 }
 
 export function getSecretHeader() {
-    return {'X-YB-APPKEY': APP_KEY, 'X-YB-PEIV': getRandom(16)};
+    return { 'X-YB-APPKEY': APP_KEY, 'X-YB-PEIV': getRandom(16) };
 }
 
 function getSecretMap() {
     const map = {
         appKey: APP_KEY,
         nonce_str: getRandom(11),
-        timestamp: parseInt(String(+new Date() / 1000), 10)
+        timestamp: parseInt(String(+new Date() / 1000), 10),
     };
     const result = Object.keys(map)
         .sort()
@@ -100,7 +99,7 @@ function getSecretMap() {
         stringSignTemp: `${Object.keys(result)
             // @ts-ignore
             .map((key) => `${key}=${result[key]}`)
-            .join('&')}&key=${APP_SECRET}`
+            .join('&')}&key=${APP_SECRET}`,
     };
 }
 
@@ -108,7 +107,7 @@ function encodeData(stringDataTemp: any, iv: any) {
     const aesRes = AES.encrypt(stringDataTemp, APP_DATA_SECRET_KEY, {
         iv: enc_utf8.parse(iv),
         // mode: CryptoJS.mode.CBC, // mode默认为CBC
-        padding: pkcs7
+        padding: pkcs7,
     });
     return aesRes.toString();
 }
@@ -118,10 +117,10 @@ function encodeSign(stringSignTemp: any) {
 }
 
 export function getSecretParams(iv: any) {
-    const {map, stringDataTemp, stringSignTemp} = getSecretMap();
+    const { map, stringDataTemp, stringSignTemp } = getSecretMap();
     return {
         ...map,
         sign: encodeSign(stringSignTemp),
-        data: encodeData(stringDataTemp, iv)
+        data: encodeData(stringDataTemp, iv),
     };
 }
