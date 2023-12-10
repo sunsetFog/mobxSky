@@ -1,26 +1,53 @@
 .niceShadow {
     width: 100%;
+    padding: 0 10px;
+
     .whiteLegend {
         width: 100%;
+
         ul {
             width: 100%;
+
             li {
                 width: 215px;
                 height: 200px;
                 float: left;
                 margin: 15px;
-                border: 1px solid rgba(0,0,0,.06);
+                border: 1px solid rgba(0, 0, 0, .06);
+
                 header {
                     width: 100%;
                     height: 38px;
-                    border-bottom: 1px solid rgba(0,0,0,.06);
+                    border-bottom: 1px solid rgba(0, 0, 0, .06);
                 }
             }
+
             li:hover {
                 box-shadow: 0 6px 16px -8px #00000014, 0 9px 28px #0000000d, 0 12px 48px 16px #00000008;
             }
         }
     }
+
+    .petalBox {
+        width: 100%;
+        box-shadow: 0 5px 12px 2px #d4e2f0;
+
+        ul {
+            width: 100%;
+
+            li {
+                width: 215px;
+                height: 200px;
+                float: left;
+                margin: 15px;
+            }
+
+            li:hover {
+                background: linear-gradient(180deg, #f4fbff 24.63%, #e6f3ff 95.13%);
+            }
+        }
+    }
+
     .birdBox {
         width: 240px;
         height: 34px;
@@ -31,10 +58,12 @@
         padding: 0 12px;
         box-shadow: inset 0 2px 3px #d3def2, inset 0px -0.3px 0.3px #d3def2;
         display: flex;
+
         input {
             flex: 1;
             height: 100%;
         }
+
         .searchBox {
             float: right;
             width: fit-content;
@@ -43,20 +72,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
             img {
                 width: 14px;
                 height: 14px;
             }
         }
     }
+
+    .catwoman {
+
+        input {
+            width: 120px;
+            height: 36px;
+            color: #249cfc;
+            font-size: 12px;
+            background: #e8f0fe;
+            border: 1px solid transparent;
+            padding: 0 9px;
+            border-radius: 6px;
+            box-shadow: inset 0 2px 4px 0 #b8c3d6;
+            &:focus {
+                border: 1px solid #249cfc;;
+            }
+        }
+    }
+
     .grassBox {
         width: 170px;
         height: 42px;
         font-size: 18px;
         border-radius: 20px !important;
         @include bd-button-bg();
+
         &:hover {
             @include bd-button-active-bg();
         }
+    }
+    .swanBox {
+        width: 72px;
+        height: 36px;
+        margin: 0 10px;
+        color: #3f5075;
+        background: linear-gradient(180deg, #fff 27.36%, #d4e4f3 74.94%, #f2f8fc 100%);
+        border: 0.5px solid #d5e7f9;
+        border-radius: 6px;
+        box-shadow: 0 1px 0 #c8ddef, 0 2px 6px #d5e7f9, inset 0 -2px 4px #fff, inset 0 2px 4px #e9f3fd;
+    }
+    .swanActive {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .papaya {
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(180deg,
+                #eff8ff 5.52%,
+                #fff 37.95%,
+                #edf7ff 82.04%,
+                #fdfeff 96.05%,
+                #b5d2eb 98.75%);
+        box-shadow: 0 5px 12px 2px #d4e2f0;
     }
 }

@@ -33,6 +33,14 @@ function niceShadow(props: any) {
                     <div style={{ clear: 'both' }}></div>
                 </ul>
             </div>
+            <br />
+            <div className={styles.petalBox}>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <div style={{ clear: 'both' }}></div>
+                </ul>
+            </div>
             <LineTextLine>输入框的内部阴影</LineTextLine>
             <div className={styles.birdBox}>
                 <input type='text' placeholder='请输入内容' />
@@ -40,8 +48,19 @@ function niceShadow(props: any) {
                     <img src={require('./img/icon_search.png')} />
                 </div>
             </div>
+            <br />
+            <br />
+            <div className={styles.catwoman}>
+                <input type='text' placeholder='请输入内容' />
+            </div>
             <LineTextLine>按钮的外部阴影</LineTextLine>
             <button className={styles.grassBox}>立即下载</button>
+            <br />
+            <br />
+            <button className={`${styles.swanBox} ${styles.swanActive}`}>登陆</button>
+            <button className={styles.swanBox}>登陆</button>
+            <LineTextLine>导航条的外部阴影</LineTextLine>
+            <div className={styles.papaya}></div>
         </section>
     );
 }
