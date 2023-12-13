@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 // import { useHistory } from 'react-router'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LineTextLine from '@/components/lineTextLine/index';
-import {useNavigate, useLocation} from 'react-router-dom';
+
 // import {
 //     HashRouter as Router,
 //     Route,
@@ -18,8 +18,6 @@ import {useNavigate, useLocation} from 'react-router-dom';
 function InstructUnit(props) {
     const [openBay, setOpenBay] = useState(false);
     const [listBay, setListBay] = useState([1, 5, 10]);
-    const params = useLocation();
-    console.log('useNavigate跳转，参数接收', params);
 
     console.log('--props--', props);
     // 报错：caught TypeError: (0 , _reactRouterDom.useSearchParams) is not a function
@@ -45,17 +43,17 @@ function InstructUnit(props) {
 }
 
 InstructUnit.defaultProps = {
-    colors: '蓝色'
+    colors: '蓝色',
 };
 
 InstructUnit.propTypes = {
-    colors: PropTypes.string
+    colors: PropTypes.string,
 };
 
 function mapStateToProps(params) {
     console.log('-mapStateToProps-', params);
     return {
-        state: params.example
+        state: params.example,
     };
 }
 

@@ -69,6 +69,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_FINANCE_AES_IV: '2oblNID+45RaQPV2',
             REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
+        // 预发环境
         release: {
             REACT_APP_API_BASE_URL: 'https://pre-h5.sstjxbb.com',
             REACT_APP_GUEST_FORM_USERNAME: release_username,
@@ -110,6 +111,7 @@ const PLATFORM_MAP = {
             REACT_APP_GUEST_FINANCE_AES_IV: '2oblNID+45RaQPV2',
             REACT_APP_SERVER_VIDEO_URL: 'http://16.162.206.193:80', // 视频访问域名
         },
+        // 预发环境
         release: {
             REACT_APP_API_BASE_URL: 'https://pre-h5.theyyone.com',
             REACT_APP_GUEST_FORM_USERNAME: release_username,

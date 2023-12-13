@@ -5,7 +5,7 @@ const DefineContext = createContext();
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useHistory, useNavigate, NavLink } from 'react-router-dom';
+
 import LineTextLine from '@/components/lineTextLine/index';
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
@@ -67,17 +67,6 @@ function Cosplay(props) {
     const honeyWay = () => {
         console.log('--honeyWay--', h1Foo);
     };
-    // const history = useHistory();
-    const navigate = useNavigate();
-    // const {history} = props;
-    const jumpWay = () => {
-        navigate('/home/hooks/instruct?title=6');
-        // history.push('/home/hooks/instruct?title=6');
-        // history.push({
-        //     pathname: '/home/exRedux',
-        //     state: { name: '白菜' },
-        // })
-    };
 
     const [list, setList] = useState([]);
 
@@ -89,11 +78,6 @@ function Cosplay(props) {
             <br />
             <br />
             <button onClick={() => beanWay(2)}>修改state值: {countOf2}</button>
-            <LineTextLine>跳转</LineTextLine>
-            <button onClick={jumpWay}>useNavigate跳转</button>
-            <br />
-            <br />
-            <NavLink to='/home/hooks/instruct?title=5'>NavLink跳转</NavLink>
 
             {/*
                 特点：修改不会重新渲染，只定义一次

@@ -5,7 +5,6 @@ import routes from '@/router';
 import SwitchRouter from '@/router/switch';
 
 function App(props: any) {
-    console.log('+++App+++', props, '---', props.children);
     const [routerActive, setRouterActive] = useState(true);
     // 通过useRoutes配置实现路由管理
     const element = useRoutes(routes);
