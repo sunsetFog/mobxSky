@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // 引入图片
 import logoimg from '@/assets/logo.png';
 // 状态管理
@@ -11,7 +11,7 @@ import logoimg from '@/assets/logo.png';
 
 // import { routes } from '~/router/routes';
 
-import {Routes, Route, Outlet} from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 // import { browserHistory } from 'react-router';// 这个路由监听不了，好像是router3版本的
 // import { createBrowserHistory, createHashHistory } from 'history';
 
@@ -22,10 +22,11 @@ import {Routes, Route, Outlet} from 'react-router-dom';
 // )
 import styles from './index.modules.scss';
 import MenuDesign from './menuDesign';
+import Watermark from '@/@energy/@pcDesign/components/watermark';
 
 class Nice extends Component {
     state = {
-        water: '水'
+        water: '水',
     };
     // listenFunc = null
     // componentWillMount() {
@@ -55,7 +56,7 @@ class Nice extends Component {
     // }
     render() {
         return (
-            <div className={styles['home-box']} style={{paddingTop: 0}}>
+            <div className={styles['home-box']} style={{ paddingTop: 0 }}>
                 <div className={styles['home-left']}>
                     <div className={styles['logo-name']}>
                         <img className={styles['logo-img']} src={logoimg} />
@@ -69,7 +70,9 @@ class Nice extends Component {
 
                     <main className={styles['pen-router-view']}>
                         {/* Outlet支持嵌套路由 */}
-                        <Outlet />
+                        <Watermark>
+                            <Outlet />
+                        </Watermark>
                     </main>
                 </div>
             </div>

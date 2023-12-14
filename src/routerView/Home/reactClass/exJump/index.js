@@ -12,6 +12,16 @@ import LineTextLine from '@/components/lineTextLine/index';
 //     dispatch => bindActionCreators(niceActions, dispatch)
 // )
 
+/*
+
+import { withRouter } from 'react-router-dom';
+export default withRouter(YourComponent);此时props对象里有了history属性
+
+使用 history.push 进行页面跳转
+this.props.history.push('/another-page');
+
+*/
+
 class Jump extends Component {
     state = {
         water: '水',

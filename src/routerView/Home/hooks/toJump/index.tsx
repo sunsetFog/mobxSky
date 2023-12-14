@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSetState, useRequest } from 'ahooks';
-import { useHistory, useNavigate, NavLink, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, NavLink, useLocation, useParams } from 'react-router-dom';
 import LineTextLine from '@/components/lineTextLine/index';
 
 function toJump(props) {
@@ -9,7 +9,6 @@ function toJump(props) {
     console.log('--跳转useLocation参数接收--', routerParams1);
     console.log('--跳转useParams参数接收--', routerParams2);
 
-    // const history = useHistory();
     const navigate = useNavigate();
     // const {history} = props;
     const toGo = () => {
