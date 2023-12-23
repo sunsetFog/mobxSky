@@ -30,6 +30,12 @@ class menuDesign extends Component {
                 icon: <AppstoreOutlined />,
                 children: [],
             },
+            {
+                label: '表单',
+                key: 'type4',
+                icon: <AppstoreOutlined />,
+                children: [],
+            },
         ],
     };
     constructor(props) {

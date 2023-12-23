@@ -45,6 +45,7 @@ const config = {
         rules: rules
     },
     plugins: [
+        // 全局变量，process.env环境变量转全局变量
         new webpack.DefinePlugin(paths.appDefineVariable),
         new HtmlWebpackPlugin({
             title: '爱沃里',

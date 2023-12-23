@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import LineTextLine from '@/components/lineTextLine/index';
 // 状态管理
@@ -21,6 +21,8 @@ UNSAFE_componentWillUpdate
 */
 
 class LifeOfCycle extends Component<any, any> {
+    // props 默认值
+    public static defaultProps = {};
     /*
         数据
         组件被称之为状态机 通过更新state来更新组件的视图展示
@@ -29,7 +31,7 @@ class LifeOfCycle extends Component<any, any> {
             props 组件外部传递内部的数据，只读，不改变
      */
     state = {
-        painting: '画画'
+        painting: '画画',
     };
     /*
         创建对象并初始化state
@@ -89,7 +91,10 @@ class LifeOfCycle extends Component<any, any> {
         参数1: 新的props，可以与this.props作判断
      */
     UNSAFE_componentWillReceiveProps(nextProps) {
-        console.log('--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用', nextProps);
+        console.log(
+            '--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用',
+            nextProps,
+        );
     }
 
     /*
@@ -97,7 +102,7 @@ class LifeOfCycle extends Component<any, any> {
      */
     waterWay(event) {
         this.setState({
-            painting: '画啥'
+            painting: '画啥',
         });
         console.log('此时state未更新', this.state);
     }
@@ -117,7 +122,7 @@ class LifeOfCycle extends Component<any, any> {
         //     state: {painting},
         //     props: {}
         // } = this;
-        const {painting} = this.state;
+        const { painting } = this.state;
         console.log('--painting--', painting);
         return (
             <div>
