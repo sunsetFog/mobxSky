@@ -57,24 +57,24 @@ class Nice extends Component {
     render() {
         return (
             <div className={styles['home-box']} style={{ paddingTop: 0 }}>
-                <div className={styles['home-left']}>
-                    <div className={styles['logo-name']}>
+                <aside className={styles['home-left']}>
+                    <div className={styles['logoBox']}>
                         <img className={styles['logo-img']} src={logoimg} />
-                        <span>爱沃里管理后台</span>
+                        <p>爱沃里管理后台</p>
                     </div>
                     <MenuDesign></MenuDesign>
-                </div>
+                </aside>
 
                 <div className={styles['home-right']}>
-                    <div className={styles['header']}></div>
+                    <header className={styles['headerBox']}></header>
 
-                    <div className={styles['gourdBox']}>
+                    <main className={styles['gourdBox']}>
                         <article className={styles['pen-router-view']}>
                             {/* Outlet支持嵌套路由 */}
                             <Outlet />
                         </article>
                         <Watermark></Watermark>
-                    </div>
+                    </main>
                 </div>
             </div>
         );
