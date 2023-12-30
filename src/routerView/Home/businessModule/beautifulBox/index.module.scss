@@ -1,0 +1,278 @@
+.beautifulBox {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-image: url('./img1/home_bg.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-position-y: 580px;
+    padding: 20px 0 20px 0;
+
+    .main1 {
+        width: 900px;
+        height: 520px;
+        margin: 0 auto;
+
+        header {
+            width: 100%;
+            height: 48px;
+            position: relative;
+            background: none;
+
+            label {
+                width: 178px;
+                height: 100%;
+                display: inline-block;
+                color: #79849e;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+            }
+
+            .tabBg1 {
+                background: url('./img1/title_first_unsele.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .tabBg7 {
+                background: url('./img1/title_last_unsele.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .tabActive1 {
+                color: #249cfc;
+                background: url('./img1/title_first_sele.png') !important;
+                background-size: 100% 100% !important;
+                background-repeat: no-repeat !important;
+                z-index: 10 !important;
+                pointer-events: none;
+            }
+
+            .tabActive2 {
+                color: #249cfc;
+                background: url('./img1/title_center_sele.png') !important;
+                background-size: 100% 100% !important;
+                background-repeat: no-repeat !important;
+                z-index: 10 !important;
+                pointer-events: none;
+            }
+
+            .tabActive7 {
+                color: #249cfc;
+                background: url('./img1/title_last_sele.png') !important;
+                background-size: 100% 100% !important;
+                background-repeat: no-repeat !important;
+                z-index: 10 !important;
+                pointer-events: none;
+            }
+        }
+
+        article {
+            width: 100%;
+            height: calc(100% - 48px);
+            border-radius: 0 0 16px 16px;
+            background: linear-gradient(228deg,
+                    rgb(240 248 255 / 60%) 5.33%,
+                    rgb(255 255 255 / 60%) 52.21%),
+                linear-gradient(9deg, #edf7ff 1.16%, #fdfeff 87.08%);
+            box-shadow: 0 -4px 4px 0 rgb(184 208 229 / 30%) inset,
+                0 4px 4px 0 rgb(255 255 255 / 90%) inset, 0 6px 12px 0 rgb(180 206 228 / 36%),
+                0 3px 0 0 #c1dbf0;
+        }
+    }
+
+    .main2 {
+        width: 900px;
+        height: 520px;
+        margin: 15px auto;
+
+        header {
+            width: 100%;
+            height: 48px;
+            background: #f5f9ff;
+            border-radius: 32px 32px 0 0;
+            box-shadow: 0 -1px 0 0 #e3f0f9 inset, 0 2px 2px 0 #fff inset;
+            padding: 0 130px;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+
+                li {
+                    flex: 1;
+                    height: 100%;
+                    float: left;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .cartoon {
+                        width: 100%;
+                        height: calc(100% + 15px);
+                        color: #987248;
+                        font-weight: 500;
+                        background-image: url('./img2/game-bg.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center 0;
+                        position: absolute;
+                        left: 0;
+                        top: -5px;
+
+                        div {
+                            width: 100%;
+                            height: 48px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            left: 0;
+                            top: -24px;
+
+                            img {
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+
+                        p {
+                            width: 100%;
+                            height: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            left: 0;
+                            bottom: 20px;
+                        }
+                    }
+
+                    main {
+                        width: 70%;
+                        height: fit-content;
+                        cursor: pointer;
+                        .imgBox {
+                            width: 100%;
+                            height: 25px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                        .title {
+                            width: 100%;
+                            height: 16px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #3f5075;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        article {
+            width: 100%;
+            height: calc(100% - 48px);
+            background: linear-gradient(180deg,
+                    #eff5ff 0.37%,
+                    #f6faff 53.41%,
+                    rgb(245 249 255 / 0%) 99.67%);
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 16px 54px 0 rgb(255 255 255 / 46%) inset, 0 -2px 4px 0 #fff inset;
+        }
+    }
+    .main3 {
+        width: 900px;
+        height: 520px;
+        margin: 15px auto;
+        background: linear-gradient(180deg, #edf7ff 0%, #fff 44.4%, #fbfdff 76.68%, #f2faff 93.87%);
+        border-radius: 16px;
+        box-shadow: 0 3px 6px 0 rgb(111 157 200 / 35%), 0 1px 1px 0 #fff inset,
+          0 -3px 2px 0 #aecce4 inset, 0 -2px 0 0 #93b6d3 inset;
+
+        header {
+            width: 100%;
+            height: 58px;
+            box-shadow: 0 -1px 0 0 #e3f0f9 inset;
+            ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+
+                li {
+                    flex: 1;
+                    height: 100%;
+                    float: left;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    main {
+                        width: 80px;
+                        height: 38px;
+                        font-size: 16px;
+                        color: #3f5075;
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        div {
+                            width: 22px;
+                            height: 22px;
+                            margin-right: 4px;
+                            background-image: url('./img3/icon_competition_all_unsele.png');
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }
+                        &:hover {
+                            color: #249cfc;
+                            transform: scale(1.05);
+                            div {
+                                background-image: url('./img3/bd_competition_all.png');
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+                    }
+                    .activeBg {
+                        font-weight: 500;
+                        color: #249cfc;
+                        background: linear-gradient(
+                        180deg,
+                        rgb(255 255 255 / 80%) 0%,
+                        rgb(233 242 252 / 80%) 65.8%,
+                        rgb(255 255 255 / 80%) 92.9%
+                        );
+                        border-radius: 8px;
+                        box-shadow: 0 2.24px 2.25px 0 #fff inset, 0 6px 12px 0 rgb(179 202 224 / 35%);
+                        div {
+                            background-image: url('./img3/bd_competition_all.png');
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        article {
+            width: 100%;
+            height: calc(100% - 58px);
+        }
+    }
+}
