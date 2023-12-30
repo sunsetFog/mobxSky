@@ -7,18 +7,22 @@
     background-size: contain;
     background-position-y: 580px;
     padding: 20px 0 20px 0;
+    section {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .main1 {
         width: 900px;
         height: 520px;
-        margin: 0 auto;
-
         header {
             width: 100%;
             height: 48px;
             position: relative;
             background: none;
-
             label {
                 width: 178px;
                 height: 100%;
@@ -89,11 +93,10 @@
     .main2 {
         width: 900px;
         height: 520px;
-        margin: 15px auto;
 
         header {
             width: 100%;
-            height: 48px;
+            height: 80px;
             background: #f5f9ff;
             border-radius: 32px 32px 0 0;
             box-shadow: 0 -1px 0 0 #e3f0f9 inset, 0 2px 2px 0 #fff inset;
@@ -120,8 +123,9 @@
                         font-weight: 500;
                         background-image: url('./img2/game-bg.png');
                         background-repeat: no-repeat;
-                        background-size: contain;
+                        background-size: 100% 100%;
                         background-position: center 0;
+                        padding: 5px 0 10px 0;
                         position: absolute;
                         left: 0;
                         top: -5px;
@@ -144,13 +148,10 @@
 
                         p {
                             width: 100%;
-                            height: 20px;
+                            height: 100%;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            position: absolute;
-                            left: 0;
-                            bottom: 20px;
                         }
                     }
 
@@ -188,7 +189,7 @@
 
         article {
             width: 100%;
-            height: calc(100% - 48px);
+            height: calc(100% - 80px);
             background: linear-gradient(180deg,
                     #eff5ff 0.37%,
                     #f6faff 53.41%,
@@ -200,7 +201,6 @@
     .main3 {
         width: 900px;
         height: 520px;
-        margin: 15px auto;
         background: linear-gradient(180deg, #edf7ff 0%, #fff 44.4%, #fbfdff 76.68%, #f2faff 93.87%);
         border-radius: 16px;
         box-shadow: 0 3px 6px 0 rgb(111 157 200 / 35%), 0 1px 1px 0 #fff inset,
