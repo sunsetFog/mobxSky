@@ -275,4 +275,37 @@
             height: calc(100% - 58px);
         }
     }
+    .main4 {
+        width: fit-content;
+        height: 62px;
+        ul {
+            width: fit-content;
+            height: 100%;
+            li {
+                width: 184px;
+                height: 100%;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                float: left;
+                margin: 0 20px;
+            }
+            .normalcy {
+                color: #3f5075;
+                background-image: url('./img4/btn_unsele.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .activeFlag {
+                color: #fff;
+                background-image: url('./img4/btn_sele.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
 }

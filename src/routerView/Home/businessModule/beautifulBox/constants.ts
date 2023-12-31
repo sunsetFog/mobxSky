@@ -87,3 +87,15 @@ export let tabArr3 = [
         activeIcon: require('./img3/bd_competition_all.png'),
     },
 ];
+
+export let tabArr4 = [
+    {
+        title: '足球赛事',
+    },
+    {
+        title: '篮球赛事',
+    },
+    {
+        title: '电竞赛事',
+    },
+];

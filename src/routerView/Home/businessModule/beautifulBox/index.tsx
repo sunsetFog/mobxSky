@@ -3,13 +3,17 @@ import { observer } from 'mobx-react';
 // component
 import { compose } from '@/utils/redux';
 import styles from './index.module.scss';
-import { tabArr1, tabArr3 } from './constants';
+import { tabArr1, tabArr3, tabArr4 } from './constants';
 
 function beautifulBox(props: any) {
-    const [tabKey, setTabOfKey] = useState(0);
+    const [tabKey1, setTabOfKey1] = useState(0);
+    const [tabKey4, setTabOfKey4] = useState(0);
 
-    const tabWay = (index) => {
-        setTabOfKey(index);
+    const tabWay1 = (index) => {
+        setTabOfKey1(index);
+    };
+    const tabWay4 = (index) => {
+        setTabOfKey4(index);
     };
     return (
         <section className={styles.beautifulBox}>
@@ -21,13 +25,13 @@ function beautifulBox(props: any) {
                                 <label
                                     key={index}
                                     className={
-                                        tabKey == index
+                                        tabKey1 == index
                                             ? styles[item.activeBg]
                                             : styles[item.conventionBg]
                                     }
                                     style={{ left: index * 120, zIndex: tabArr1.length - index }}
                                     onClick={() => {
-                                        tabWay(index);
+                                        tabWay1(index);
                                     }}
                                 >
                                     {item.title}
@@ -48,10 +52,10 @@ function beautifulBox(props: any) {
                                     <li
                                         key={index}
                                         onClick={() => {
-                                            tabWay(index);
+                                            tabWay1(index);
                                         }}
                                     >
-                                        {tabKey == index ? (
+                                        {tabKey1 == index ? (
                                             <div className={styles.cartoon}>
                                                 <p>{item.title}</p>
                                                 <div>
@@ -83,10 +87,10 @@ function beautifulBox(props: any) {
                                     <li
                                         key={index}
                                         onClick={() => {
-                                            tabWay(index);
+                                            tabWay1(index);
                                         }}
                                     >
-                                        <main className={tabKey == index ? styles.activeBg : ''}>
+                                        <main className={tabKey1 == index ? styles.activeBg : ''}>
                                             <div></div>
                                             {item.title}
                                         </main>
@@ -96,6 +100,28 @@ function beautifulBox(props: any) {
                         </ul>
                     </header>
                     <article></article>
+                </main>
+            </section>
+
+            <section>
+                <main className={styles.main4}>
+                    <ul>
+                        {tabArr4.map((item, index) => {
+                            return (
+                                <li
+                                    key={index}
+                                    onClick={() => {
+                                        tabWay4(index);
+                                    }}
+                                    className={
+                                        tabKey4 == index ? styles.activeFlag : styles.normalcy
+                                    }
+                                >
+                                    {item.title}
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </main>
             </section>
         </section>
