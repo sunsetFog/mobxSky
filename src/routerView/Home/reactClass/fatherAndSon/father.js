@@ -5,8 +5,6 @@ const DefineContext = createContext();
 // import {connect} from 'react-redux';
 // import * as niceActions from '~/redux/reduces/nice.js';
 
-// import {HashRouter as Router, Route, Switch, Redirect, Link, withRouter} from 'react-router-dom';
-
 // 引入子组件  名字要大写
 import Son from './son';
 import LineTextLine from '@/components/lineTextLine/index';

@@ -1,11 +1,9 @@
-import React, {Component, createContext} from 'react';
+import React, { Component, createContext } from 'react';
 const DefineContext = createContext();
 // 状态管理
 // import {bindActionCreators} from 'redux';
 // import {connect} from 'react-redux';
 // import * as niceActions from '~/redux/reduces/nice.js';
-
-// import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 // @connect(
 //     state => ({nice: state.nice}),

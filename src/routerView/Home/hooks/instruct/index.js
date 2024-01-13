@@ -4,17 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LineTextLine from '@/components/lineTextLine/index';
 
-// import {
-//     HashRouter as Router,
-//     Route,
-//     Switch,
-//     Redirect,
-//     Link,
-//     withRouter,
-//     useHistory,
-//     useSearchParams
-// } from "react-router-dom";
-
 function InstructUnit(props) {
     const [openBay, setOpenBay] = useState(false);
     const [listBay, setListBay] = useState([1, 5, 10]);

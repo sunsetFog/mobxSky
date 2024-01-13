@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // 状态管理
 // import {bindActionCreators} from 'redux';
 // import {connect} from 'react-redux';
 // import * as niceActions from '~/redux/reduces/nice.js';
-
-// import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 /*
 在react官网搜索propTypes
@@ -22,15 +20,15 @@ import LineTextLine from '@/components/lineTextLine/index';
 class Son extends Component {
     // 指定props类型
     static propTypes = {
-        hill: PropTypes.string
+        hill: PropTypes.string,
     };
     // props默认值
     static defaultProps = {
-        hill: 'props默认值'
+        hill: 'props默认值',
     };
 
     state = {
-        peach: this.props.hill
+        peach: this.props.hill,
     };
 
     constructor(props) {
@@ -47,7 +45,7 @@ class Son extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log('--props变化时更新state--', nextProps, '---', prevState);
         return {
-            peach: nextProps.hill
+            peach: nextProps.hill,
         };
     }
 
@@ -60,8 +58,8 @@ class Son extends Component {
     };
     render() {
         const {
-            state: {peach},
-            props: {hill}
+            state: { peach },
+            props: { hill },
         } = this;
         return (
             <div>

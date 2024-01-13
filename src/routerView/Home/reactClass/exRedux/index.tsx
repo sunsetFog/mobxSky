@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // 状态管理  bindActionCreators在API文档
 // import {bindActionCreators} from 'redux';
 // import {connect} from 'react-redux';
 // import * as niceActions from '~/redux/reduces/nice.js';
 
-// import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
-
-import {Button} from 'antd';
+import { Button } from 'antd';
 
 // 引入vuex   Store在API文档
 import Store from '@/reduxStore';
@@ -34,7 +32,7 @@ class ExRedux extends Component {
             方法二：直接到顺序2
             Store.dispatch(this.props.changeApple({ payload: '冰' })); 这个就经过action方法了
          */
-        Store.dispatch({type: 'set_userinfo', payload: '冰'});
+        Store.dispatch({ type: 'set_userinfo', payload: '冰' });
     }
 
     render() {

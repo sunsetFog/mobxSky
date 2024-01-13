@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useRef, useContext} from 'react';
-import {connect, useSelector, useDispatch} from 'react-redux';
-import {modifyCount, fetchChannelList} from '@/reduxToolkitStore/modules/counterStore';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { modifyCount, fetchChannelList } from '@/reduxToolkitStore/modules/counterStore';
 
 import PropTypes from 'prop-types';
-// import {HashRouter as Router, Route, Switch, Redirect, Link, withRouter} from 'react-router-dom';
 import LineTextLine from '@/components/lineTextLine/index';
 
 function ExRedux(props) {
@@ -13,7 +12,7 @@ function ExRedux(props) {
         caught TypeError: (0 , _reactRedux.useSelector) is not a function
         升级react-redux版本到7.1.1
      */
-    const {count} = useSelector((state) => state.counter);
+    const { count } = useSelector((state) => state.counter);
 
     // 修改数据
     const dispatch = useDispatch();
@@ -42,17 +41,17 @@ function ExRedux(props) {
 
 // 设置属性默认值
 ExRedux.defaultProps = {
-    colors: '绿色'
+    colors: '绿色',
 };
 // 设置属性类型约束
 ExRedux.propTypes = {
-    colors: PropTypes.string
+    colors: PropTypes.string,
 };
 
 function mapStateToProps(params) {
     console.log('-hook2-mapStateToProps-', params);
     return {
-        state: params.counter
+        state: params.counter,
     };
 }
 

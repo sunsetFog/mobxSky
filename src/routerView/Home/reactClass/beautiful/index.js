@@ -25,15 +25,6 @@ https://react-redux.js.org/api/connect
 // import * as niceActions from '~/redux/reduces/nice.js';
 // import { bindActionCreators } from 'redux';
 
-import {
-    HashRouter as Router,
-    Route,
-    Switch,
-    Redirect,
-    Link,
-    NavLink,
-    withRouter,
-} from 'react-router-dom';
 // ui组件库
 import { Button, Checkbox, Form, Input, DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
