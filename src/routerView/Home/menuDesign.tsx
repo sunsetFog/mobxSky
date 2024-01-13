@@ -37,6 +37,7 @@ class menuDesign extends Component {
                 children: [],
             },
         ],
+        openOfKeys: [],
     };
     constructor(props) {
         super(props);
@@ -72,16 +73,22 @@ class menuDesign extends Component {
         // @ts-ignore
         this.props.navigate(value.key);
     }
+    onOpenChange(keys) {
+        this.setState({
+            openOfKeys: [keys[keys.length - 1]],
+        });
+    }
     render() {
         const {
-            state: { listArr },
+            state: { listArr, openOfKeys },
         } = this;
         return (
             <section>
                 <Menu
+                    openKeys={openOfKeys}
                     onClick={this.menuWay.bind(this)}
+                    onOpenChange={this.onOpenChange.bind(this)}
                     defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['type1']}
                     mode='inline'
                     items={listArr}
                 />

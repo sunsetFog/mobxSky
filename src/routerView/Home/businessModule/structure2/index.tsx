@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 // component
 import { compose } from '@/utils/redux';
 import styles from './index.module.scss';
-import { tabArr, contentArr } from './constants';
+import { tabArr } from './constants';
 
 function structure2(props: any) {
     const [tabKey, setTabOfKey] = useState(0);

@@ -43,7 +43,7 @@ import { formatDuration, initUpdateDuration } from './utils';
 // 子组件
 import AddModal from './addModal';
 
-import TableService from '@/@energy/@library/tableService';
+import TableService3 from '@/@energy/@library/tableService3';
 
 // 第一个是export default导出，第二个export导出
 import hocTabPage, { initState } from '@/@energy/@higherOrder/hocTabPage';
@@ -53,7 +53,7 @@ import hocTabPage, { initState } from '@/@energy/@higherOrder/hocTabPage';
 //     dispatch => bindActionCreators(niceActions, dispatch)
 // )
 
-class Beautiful extends TableService {
+class Beautiful extends TableService3 {
     state = {};
 
     constructor(props) {
