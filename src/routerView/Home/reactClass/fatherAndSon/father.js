@@ -1,4 +1,4 @@
-import React, { Component, createContext } from 'react';
+import React, { Component, createContext, createRef } from 'react';
 const DefineContext = createContext();
 // 状态管理
 // import {bindActionCreators} from 'redux';
@@ -41,6 +41,7 @@ class Father extends Component {
     cartoon = () => {
         this.childTab2.rewardInfo(true);
     };
+    childTab2 = createRef();
 
     render() {
         const { hill, water } = this.state;

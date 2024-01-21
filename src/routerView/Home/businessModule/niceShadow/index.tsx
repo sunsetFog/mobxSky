@@ -16,6 +16,20 @@ v-shadow：
 blur：模糊半径。值越大，阴影越模糊
 spread：阴影的扩展距离。正值会使阴影变大，负值会使阴影变小。
 color：颜色。
+
+
+上下左右都有一样阴影，注意父盒子要加padding: 10px,不然左，上看不见阴影
+方式1
+box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+
+这个有偏移，效果拉长了
+box-shadow: 2px 0 0 2px rgba(24, 144, 255, 0.2), -2px 0 0 2px rgba(24, 144, 255, 0.2), 0 2px 0 2px rgba(24, 144, 255, 0.2), 0 -2px 0 2px rgba(24, 144, 255, 0.2);
+
+方式2
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 上方向阴影
+  0px -4px 4px rgba(0, 0, 0, 0.25), 下方向阴影
+  -4px 0px 4px rgba(0, 0, 0, 0.25), 左方向阴影
+  4px 0px 4px rgba(0, 0, 0, 0.25); 右方向阴影
 */
 function niceShadow(props: any) {
     useEffect(() => {});
