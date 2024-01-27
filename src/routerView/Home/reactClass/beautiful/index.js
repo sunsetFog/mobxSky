@@ -34,10 +34,10 @@ import { formatDuration, initUpdateDuration } from './utils';
 // 子组件
 import AddModal from './addModal';
 
-import TableService3 from '@/@energy/@library/tableService3';
+import TableService3 from '@/@energy/ivoryDesign/@library/tableService3';
 
 // 第一个是export default导出，第二个export导出
-import hocTabPage, { initState } from '@/@energy/@higherOrder/hocTabPage';
+import hocTabPage, { initState } from '@/@energy/ivoryDesign/@higherOrder/hocTabPage';
 
 // @connect(
 //     state => ({ nice: state.nice }),

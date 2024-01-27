@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react';
 // component
 import { compose } from '@/utils/redux';
-import TableCheckbox from '@/@energy/@pcDesign/components/tableCheckbox';
+import TableCheckbox from '@/@energy/ivoryDesign/web/components/tableCheckbox';
 import { tableList } from './constants';
 import styles from './index.module.scss';
 

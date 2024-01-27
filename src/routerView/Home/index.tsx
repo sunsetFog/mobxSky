@@ -22,7 +22,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 // )
 import styles from './index.modules.scss';
 import MenuDesign from './menuDesign';
-import Watermark from '@/@energy/@pcDesign/components/watermark';
+import Watermark from '@/@energy/ivoryDesign/web/components/watermark';
 
 class Nice extends Component {
     state = {

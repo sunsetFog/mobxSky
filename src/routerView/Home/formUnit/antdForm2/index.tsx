@@ -1,11 +1,11 @@
 import React, { Component, InputHTMLAttributes, createRef } from 'react';
 import { observer } from 'mobx-react';
 import { Checkbox, Input, message, Modal, Spin, Radio, Select, Popover, Button, Form } from 'antd';
-import FormService2 from '@/@energy/@library/formService2';
+import FormService2 from '@/@energy/ivoryDesign/@library/formService2';
 import { toRules1 } from './constants';
 
 class antdForm2 extends FormService2 {
-    state = {
+    public state = {
         isModalOpen: true,
     };
     public showModal = () => {
@@ -15,11 +15,11 @@ class antdForm2 extends FormService2 {
     };
     public handleOk = () => {
         this.onValidateForm().then((form) => {
-            console.log("--handleOk--", form)
-        //     this.setState({
-        //         isModalOpen: false,
-        //     });
-          })
+            console.log('--handleOk--', form);
+            //     this.setState({
+            //         isModalOpen: false,
+            //     });
+        });
     };
     public handleCancel = () => {
         this.onRest1();
@@ -53,11 +53,7 @@ class antdForm2 extends FormService2 {
                         // onFinishFailed={onFinishFailed}
                         autoComplete='off'
                     >
-                        <Form.Item
-                            label='Username'
-                            name='username'
-                            rules={toRules1}
-                        >
+                        <Form.Item label='Username' name='username' rules={toRules1}>
                             <Input />
                         </Form.Item>
                     </Form>

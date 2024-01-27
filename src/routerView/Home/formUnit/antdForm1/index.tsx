@@ -1,7 +1,7 @@
 import React, { Component, InputHTMLAttributes, createRef } from 'react';
 import { observer } from 'mobx-react';
 import { Checkbox, Input, message, Modal, Spin, Radio, Select, Popover, Button, Form } from 'antd';
-import FormService2 from '@/@energy/@library/formService2';
+import FormService2 from '@/@energy/ivoryDesign/@library/formService2';
 
 class antdForm1 extends FormService2 {
     state = {
@@ -14,11 +14,11 @@ class antdForm1 extends FormService2 {
     };
     public handleOk = () => {
         this.onValidateForm().then((form) => {
-            console.log("--handleOk--", form)
-        //     this.setState({
-        //         isModalOpen: false,
-        //     });
-          })
+            console.log('--handleOk--', form);
+            //     this.setState({
+            //         isModalOpen: false,
+            //     });
+        });
     };
     public handleCancel = () => {
         this.onRest1();
@@ -59,7 +59,9 @@ class antdForm1 extends FormService2 {
                             name='username'
                             rules={[{ required: true, message: 'Please input your username!' }]}
                             // 修改字段值，使输入不了空格
-                            getValueFromEvent={(event: any) => event.target.value.replace(/\s+/g, '')}
+                            getValueFromEvent={(event: any) =>
+                                event.target.value.replace(/\s+/g, '')
+                            }
                         >
                             <Input />
                         </Form.Item>
