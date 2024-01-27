@@ -18,21 +18,27 @@ const DragonBoatFestival = SuspenseLazy(
         ),
 );
 
+let firstArr = [];
+let homeArr = [];
 const files = require.context('../', true, /\/router\.ts$/);
 console.log('files.keys()===', files.keys());
-let secondArr = [];
 files.keys().forEach((item) => {
     let filesObj = files(item).default;
     // console.log('context===', filesObj);
     filesObj.path = item.slice(12, -10);
     filesObj.element = SuspenseLazy(filesObj.content);
     delete filesObj.content;
-    secondArr.push(filesObj);
+    if (filesObj.superior == '/home') {
+        homeArr.push(filesObj);
+    }
+    if (!filesObj.superior) {
+        firstArr.push(filesObj);
+    }
 });
-console.log('secondArr===', secondArr);
 
 // const routes: RouteObject[] = [
 const routes = [
+    ...firstArr,
     {
         path: '/',
         element: <Navigate to='home' />, // 重定向
@@ -41,6 +47,7 @@ const routes = [
         path: 'home',
         element: Home,
         children: [
+            ...homeArr,
             // {
             //     path: '/home/reactClass/lifeCycle',
             //     element: LifeCycle,
@@ -61,12 +68,5 @@ const routes = [
         element: NotFound,
     },
 ];
-
-for (let i = 0; i < routes.length; i++) {
-    let item = routes[i];
-    if (item.path == 'home') {
-        item.children = [...item.children, ...secondArr];
-    }
-}
 
 export default routes;
