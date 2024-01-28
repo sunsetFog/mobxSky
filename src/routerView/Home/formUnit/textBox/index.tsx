@@ -101,6 +101,13 @@ class textBox extends Component {
             userArr: arrBox,
         });
     };
+    public use20Way = (list) => {
+        let arrBox = [];
+        arrBox = list.filter((_item, index) => {
+            return index < 20;
+        });
+        return arrBox;
+    };
     render(): React.ReactNode {
         const { userArr, intWidth, inputValue } = this.state;
         console.log('--deleteWay-3-', userArr);
@@ -140,7 +147,7 @@ class textBox extends Component {
                     ) : null}
                     {userArr.length >= 20 ? (
                         <ul>
-                            {userArr.map((item, index) => {
+                            {this.use20Way(userArr).map((item, index) => {
                                 return (
                                     <li key={index}>
                                         <p className={styles.textApt}>{item}</p>
