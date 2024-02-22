@@ -25,7 +25,7 @@ class menuDesign extends Component {
                 children: [],
             },
             {
-                label: '业务模块',
+                label: '功能模块',
                 key: 'type3',
                 icon: <AppstoreOutlined />,
                 children: [],

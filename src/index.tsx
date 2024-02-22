@@ -6,6 +6,7 @@ import AppRouter from '@/AppRouter';
 // toolkitStore的使用
 import { Provider, connect } from 'react-redux'; // 用Provider, 才能用connect
 import toolkitStore from '@/reduxToolkitStore';
+import Channel from '@/utils/rxjsAjax/channel/channel';
 
 // 加载全局样式
 import '@root/global.css';
@@ -18,7 +19,9 @@ const root = ReactDOM.createRoot(rootElement as HTMLDivElement);
 root.render(
     <BrowserRouter basename='/'>
         <StoresProvider value={stores}>
-            <AppRouter />
+            <Channel>
+                <AppRouter />
+            </Channel>
         </StoresProvider>
         {/* <Provider store={toolkitStore}>
             <AppRouter />

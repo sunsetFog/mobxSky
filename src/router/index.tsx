@@ -21,7 +21,7 @@ const DragonBoatFestival = SuspenseLazy(
 let firstArr = [];
 let homeArr = [];
 const files = require.context('../', true, /\/router\.ts$/);
-console.log('files.keys()===', files.keys());
+// console.log('files.keys()===', files.keys());
 files.keys().forEach((item) => {
     let filesObj = files(item).default;
     // console.log('context===', filesObj);
