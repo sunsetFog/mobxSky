@@ -83,16 +83,14 @@ class menuDesign extends Component {
             state: { listArr, openOfKeys },
         } = this;
         return (
-            <section>
-                <Menu
-                    openKeys={openOfKeys}
-                    onClick={this.menuWay.bind(this)}
-                    onOpenChange={this.onOpenChange.bind(this)}
-                    defaultSelectedKeys={['1']}
-                    mode='inline'
-                    items={listArr}
-                />
-            </section>
+            <Menu
+                openKeys={openOfKeys}
+                onClick={this.menuWay.bind(this)}
+                onOpenChange={this.onOpenChange.bind(this)}
+                defaultSelectedKeys={['1']}
+                mode='inline'
+                items={listArr}
+            />
         );
     }
 }

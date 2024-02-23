@@ -23,6 +23,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import styles from './index.modules.scss';
 import MenuDesign from './menuDesign';
 import Watermark from '@/@energy/ivoryDesign/web/components/watermark';
+import CustomScrollbar from '@/@energy/ivoryDesign/web/components/customScrollbar';
 
 class Nice extends Component {
     state = {
@@ -62,7 +63,11 @@ class Nice extends Component {
                         <img className={styles['logo-img']} src={logoimg} />
                         <p>爱沃里管理后台</p>
                     </div>
-                    <MenuDesign></MenuDesign>
+                    <main className={styles.menuBox}>
+                        <CustomScrollbar>
+                            <MenuDesign></MenuDesign>
+                        </CustomScrollbar>
+                    </main>
                 </aside>
 
                 <div className={styles['home-right']}>

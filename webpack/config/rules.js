@@ -93,6 +93,7 @@ module.exports = [
                     sourceMap: isDevelopment
                 }
             },
+            // scss全局变量
             {
                 loader: 'sass-resources-loader',
                 options: {
